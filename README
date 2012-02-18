@@ -1,1 +1,5 @@
 Here is a test readme file
+
+Just as a note, to push to git :
+git add .
+git commit -am "MESSAGE"
