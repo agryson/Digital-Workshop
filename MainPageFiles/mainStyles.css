@@ -1,0 +1,176 @@
+#test {
+    width: 30px;
+	height: 50px;
+	background-color: #000000;
+}
+
+html {
+	font-family: Lato, Arial, sans-serif;
+	background-color: #1d5135;
+    /*background-image: url("texture.png"); add the texture image here
+    background-repeat: repeat;*/
+    color: #d6d8c7;
+    box-shadow: 0 0 350px -20px #000000 inset;
+    height: 100%;
+    width: 100%;
+	
+}
+
+header {
+	position: relative;
+	margin: auto;
+    margin-top: 5%;
+    z-index: 0;
+	width: 1000px;
+	height: 160px;
+}
+
+header h1 {
+    position: absolute;
+	top: 5%;
+	left: 18%;
+}
+
+#bannerTicket {
+ 	background-color: #453E41;
+ 	border-radius: 0 10px 10px 0px;
+ 	margin-left: 131px;
+}
+
+#profilePhoto {
+	width: 131px;
+	height: 160px;
+	position: absolute;
+	left: 0px;
+	border-radius: 10px;
+	z-index: -1;
+}
+
+#profileRecess {
+	width: 131px;
+	height: 160px;
+	position: absolute;
+	left: 0px;
+    bottom: 30px;
+	border-radius: 10px;
+	box-shadow: 0px 0px 30px 5px rgba(0,0,0,.5) inset, 1px 1px 2px #349160, -1px -1px 2px #113020;
+}
+
+#contentBox {
+	background-color: #292929;
+	margin: auto;
+	height: 500px;
+	width: 1000px;
+	position:relative;
+    border-radius: 10px 0 0 10px;
+}
+
+.tab {
+    background: #453e41;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50px;
+    height: 100%;
+    border-radius: 10px 0 0 10px;
+    box-shadow: -5px 0px 3px -3px #000000 inset;
+}
+
+.indexCard {
+	position: absolute;
+	height: 100%;
+	right: 0px;
+    box-shadow: -2px 0 5px #000000;
+    border-radius: 10px 0 0 10px;
+    overflow: hidden;
+}
+
+.indexTitle {
+	position: relative;
+	top: 250px;
+	width: 35px;
+	z-index: 2;
+    cursor: default;
+	-webkit-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+}
+
+#about {
+	z-index: 1;
+	left: 0px;
+    box-shadow: 0 0 750px -100px #FFFFFF, -2px 0 5px #000000;
+}
+
+#projects {
+	z-index: 2;
+	width: 150px;
+	background-color: #292929;
+	display: block;
+	-webkit-transition: width 0.3s ease-in;
+    -moz-transition: width 0.3s ease-in;
+	transition: width 0.3s ease-in;
+}
+
+#projectsContent {
+	padding: 20px 100px 20px 60px;
+	min-width: 800px;
+}
+
+#plans {
+	z-index: 3;
+	width: 100px;
+	margin-left: 900px;
+	background-color: #292929;
+    display: block;
+    -webkit-transition: width 0.3s ease-in;
+    -moz-transition: width 0.3s ease-in;
+	transition: width 0.3s ease-in;
+}
+
+#plansContent {
+	margin-left: 50px;
+	padding-right: 50px;
+	min-width: 800px;
+}
+
+#links {
+    z-index: 4;
+	width: 50px;
+	margin-left: 950px;
+    background-color: #c20fc2;
+    display: block;
+    -webkit-transition: width 0.3s ease-in;
+    -moz-transition: width 0.3s ease-in;
+	transition: width 0.3s ease-in;
+    box-shadow: -5px 0px 3px -3px #000000 inset, -2px 0 5px #000000;;
+}
+
+#linksContent {
+	margin-left:50px;
+	min-width: 800px;
+}
+
+#popBack {
+  z-index: 20;
+  background-color: rgba(0,0,0,0.5);
+  position: absolute;
+  top:0%;
+  left: 0%;
+  height: 100%;
+  width: 100%;
+  display: none;
+}
+
+#popBox {
+  z-index: 21;
+  background-color: #FFFFFF;
+  height: 300px;
+  width: 600px;
+  position: absolute;
+  top:25%;
+  left: 25%;
+  display: none;
+}
+
+
+
