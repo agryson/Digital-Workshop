@@ -7,13 +7,13 @@
 html {
 	font-family: Lato, Arial, sans-serif;
 	background-color: #1d5135;
-    background-image: url("texture.png"); add the texture image here
+    background-image: url("texture.png");
     background-repeat: repeat;
     color: #d6d8c7;
     box-shadow: 0 0 350px -20px #000000 inset;
     height: 100%;
     width: 100%;
-	
+	overflow: hidden;
 }
 
 header {
@@ -22,11 +22,22 @@ header {
     margin-top: 3%;
     z-index: 0;
 	width: 1000px;
-	height: 160px;
+	height: 140px;
 }
 
 header h1 {
     padding-left: 152px;
+}
+
+::-webkit-scrollbar {
+    width: 9px;
+}
+
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    max-width: 5px;
+    background: rgba(255,255,255, 0.1);
 }
 
 #bannerTicket {
@@ -54,7 +65,7 @@ header h1 {
 	box-shadow: 0px 0px 30px 5px rgba(0,0,0,.5) inset, 1px 1px 2px #349160, -1px -1px 2px #113020;
 }
 
-#contentBox {
+#mainBox {
 	background-color: #292929;
 	margin: auto;
 	height: 618px;
@@ -63,32 +74,47 @@ header h1 {
     border-radius: 10px 0 0 10px;
 }
 
-.tab {
-    background: #453e41;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 50px;
-    height: 100%;
-    border-radius: 10px 0 0 10px;
-    box-shadow: -5px 0px 3px -3px #000000 inset;
-}
-
 .indexCard {
 	position: absolute;
 	height: 100%;
 	right: 0px;
+    background-color: #292929;
     box-shadow: -2px 0 5px #000000;
     border-radius: 10px 0 0 10px;
     overflow: hidden;
+	-webkit-transition: width 0.3s ease-in;
+    -moz-transition: width 0.3s ease-in;
+	transition: width 0.3s ease-in;
+}
+
+.contentBox {
+    width: 770px;
+    height: 578px;
+    margin-left: 50px;
+    margin-right: 5px;
+    padding: 20px;
+    padding-right: 0px;
+    overflow-y: auto;
+}
+
+.tab {
+    background: #202020;    
+    position: absolute;
+    left: 0;
+    width: 50px;
+    height: 100%;
+    color:  rgba(255,255,255, 0.5);
+    border-radius: 10px 0 0 10px;
+    box-shadow: 3px 3px 5px rgba(255,255,255,0.1) inset, 3px 0px 3px -1px #000000;
 }
 
 .indexTitle {
 	position: relative;
-	top: 250px;
-	width: 35px;
+	top: 300px;
+	width: 50px;
 	z-index: 2;
     cursor: default;
+    text-shadow: -1px 1px 1px #453E41, 1px -1px 1px #191919, 0 0 1px #d6d8c7;
 	-webkit-transform: rotate(-90deg);
     -moz-transform: rotate(-90deg);
 }
@@ -96,56 +122,25 @@ header h1 {
 #about {
 	z-index: 1;
 	left: 0px;
-    box-shadow: 0 0 750px -100px #FFFFFF, -2px 0 5px #000000;
+    box-shadow: 0 0 450px -50px rgba(255, 255, 255, 0.6), -2px 0 5px #000000;
 }
 
 #projects {
 	z-index: 2;
 	width: 150px;
-	background-color: #292929;
-	display: block;
-	-webkit-transition: width 0.3s ease-in;
-    -moz-transition: width 0.3s ease-in;
-	transition: width 0.3s ease-in;
-}
-
-#projectsContent {
-	padding: 20px 100px 20px 60px;
-	min-width: 800px;
 }
 
 #plans {
 	z-index: 3;
 	width: 100px;
 	margin-left: 900px;
-	background-color: #292929;
-    display: block;
-    -webkit-transition: width 0.3s ease-in;
-    -moz-transition: width 0.3s ease-in;
-	transition: width 0.3s ease-in;
-}
-
-#plansContent {
-	margin-left: 50px;
-	padding-right: 50px;
-	min-width: 800px;
 }
 
 #links {
     z-index: 4;
 	width: 50px;
 	margin-left: 950px;
-    background-color: #c20fc2;
-    display: block;
-    -webkit-transition: width 0.3s ease-in;
-    -moz-transition: width 0.3s ease-in;
-	transition: width 0.3s ease-in;
     box-shadow: -5px 0px 3px -3px #000000 inset, -2px 0 5px #000000;;
-}
-
-#linksContent {
-	margin-left:50px;
-	min-width: 800px;
 }
 
 #popBack {
