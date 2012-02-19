@@ -3,8 +3,10 @@ This is a test for pushing to the pre-prod branch
 Just as a note, to push to git :
 git add .
 git commit -am "MESSAGE"
-
-It seems that 
 git push origin BRANCH_NAME
-is also necessary
+
+To merge the branches:
+checkout to master, then:
+git merge BRANCH_TO_MERGE_WITH_MASTER
+then push the changes to git
 
