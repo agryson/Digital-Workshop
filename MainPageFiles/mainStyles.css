@@ -7,7 +7,7 @@
 html {
 	font-family: Lato, Arial, sans-serif;
 	background-color: #1d5135;
-    background-image: url("texture.png");
+    background-image: url("images/texture.png");
     background-repeat: repeat;
     color: #d6d8c7;
     box-shadow: 0 0 350px -20px #000000 inset;
@@ -19,14 +19,15 @@ html {
 header {
 	position: relative;
 	margin: auto;
-    margin-top: 3%;
+    margin-top: 10%;
     z-index: 0;
 	width: 1000px;
 	height: 140px;
 }
 
 header h1 {
-    padding-left: 152px;
+    padding-left: 20px;
+    padding-top: 20px;
 }
 
 ::-webkit-scrollbar {
@@ -41,14 +42,32 @@ header h1 {
 }
 
 #bannerTicket {
- 	background-color: #453E41;
+ 	background-color: #292929;
  	border-radius: 0 10px 10px 0px;
- 	margin-left: 94px;
+    box-shadow: 3px 0px 2px -2px #808080 inset;
+    height: 140px;
+    width: 880px;
+ 	margin-left: 120px;
+    position: relative;
+    left: 0px;
+    bottom: 40px;
+    z-index: 50;
 }
 
+#socialIcons {
+    margin: 20px;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+#Li {
+    margin-left: 5px;
+    }
+
 #profilePhoto {
-	width: 94px;
-	height: 153px;
+	width: 120px;
+	height: 160px;
 	position: absolute;
 	left: 0px;
 	border-radius: 10px;
@@ -56,10 +75,11 @@ header h1 {
 }
 
 #profileRecess {
-	width: 94px;
-	height: 153px;
+	width: 120px;
+	height: 160px;
 	position: absolute;
 	left: 0px;
+    margin-top: 10%;
     bottom: 30px;
 	border-radius: 10px;
 	box-shadow: 0px 0px 30px 5px rgba(0,0,0,.5) inset, 1px 1px 2px #349160, -1px -1px 2px #113020;
@@ -68,10 +88,12 @@ header h1 {
 #mainBox {
 	background-color: #292929;
 	margin: auto;
-	height: 618px;
+	height: 500px;
 	width: 1000px;
 	position:relative;
     border-radius: 10px 0 0 10px;
+    box-shadow: 0 0 450px -50px rgba(255, 255, 255, 0.6);
+    z-index: 0;
 }
 
 .indexCard {
@@ -89,7 +111,7 @@ header h1 {
 
 .contentBox {
     width: 770px;
-    height: 578px;
+    height: 460px;
     margin-left: 50px;
     margin-right: 5px;
     padding: 20px;
@@ -104,14 +126,15 @@ header h1 {
     width: 50px;
     height: 100%;
     color:  rgba(255,255,255, 0.5);
+    background-image: url("images/fibreTexture.png");
+    background-repeat: repeat;
     border-radius: 10px 0 0 10px;
     box-shadow: 3px 3px 5px rgba(255,255,255,0.1) inset, 3px 0px 3px -1px #000000;
 }
 
 .indexTitle {
 	position: relative;
-	top: 300px;
-	width: 50px;
+	top: 420px;
 	z-index: 2;
     cursor: default;
     text-shadow: -1px 1px 1px #453E41, 1px -1px 1px #191919, 0 0 1px #d6d8c7;
@@ -122,7 +145,7 @@ header h1 {
 #about {
 	z-index: 1;
 	left: 0px;
-    box-shadow: 0 0 450px -50px rgba(255, 255, 255, 0.6), -2px 0 5px #000000;
+    box-shadow: -2px 0 5px #000000;
 }
 
 #projects {
