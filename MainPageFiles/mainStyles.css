@@ -82,7 +82,7 @@ header h1 {
     margin-top: 10%;
     bottom: 30px;
 	border-radius: 10px;
-	box-shadow: 0px 0px 30px 5px rgba(0,0,0,.5) inset, 1px 1px 2px #349160, -1px -1px 2px #113020;
+	box-shadow: 0px 0px 30px 5px rgba(0,0,0,.5) inset, 1px 1px 2px #349160, -1px -1px 2px #113020, 1px 1px 5px #000000 inset;
 }
 
 #mainBox {
