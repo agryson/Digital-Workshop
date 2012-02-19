@@ -7,8 +7,8 @@
 html {
 	font-family: Lato, Arial, sans-serif;
 	background-color: #1d5135;
-    /*background-image: url("texture.png"); add the texture image here
-    background-repeat: repeat;*/
+    background-image: url("texture.png"); add the texture image here
+    background-repeat: repeat;
     color: #d6d8c7;
     box-shadow: 0 0 350px -20px #000000 inset;
     height: 100%;
@@ -19,27 +19,25 @@ html {
 header {
 	position: relative;
 	margin: auto;
-    margin-top: 5%;
+    margin-top: 3%;
     z-index: 0;
 	width: 1000px;
 	height: 160px;
 }
 
 header h1 {
-    position: absolute;
-	top: 5%;
-	left: 18%;
+    padding-left: 152px;
 }
 
 #bannerTicket {
  	background-color: #453E41;
  	border-radius: 0 10px 10px 0px;
- 	margin-left: 131px;
+ 	margin-left: 94px;
 }
 
 #profilePhoto {
-	width: 131px;
-	height: 160px;
+	width: 94px;
+	height: 153px;
 	position: absolute;
 	left: 0px;
 	border-radius: 10px;
@@ -47,8 +45,8 @@ header h1 {
 }
 
 #profileRecess {
-	width: 131px;
-	height: 160px;
+	width: 94px;
+	height: 153px;
 	position: absolute;
 	left: 0px;
     bottom: 30px;
@@ -59,7 +57,7 @@ header h1 {
 #contentBox {
 	background-color: #292929;
 	margin: auto;
-	height: 500px;
+	height: 618px;
 	width: 1000px;
 	position:relative;
     border-radius: 10px 0 0 10px;
