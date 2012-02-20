@@ -20,7 +20,7 @@ header {
 	position: relative;
 	margin: auto;
     margin-top: 10%;
-    z-index: 0;
+    z-index: 2;
 	width: 1000px;
 	height: 140px;
 }
@@ -149,8 +149,7 @@ p {
     left: 0;
     width: 50px;
     height: 100%;
-    color:  rgba(255,255,255, 0.5);
-    background-image: url("images/pinhole.png");
+    background-image: url("images/pinHole.png");
     background-repeat: repeat;
     border-radius: 10px 0 0 10px;
     box-shadow: 3px 3px 5px rgba(255,255,255,0.1) inset, 3px 0px 3px -1px #000000;
