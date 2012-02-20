@@ -65,10 +65,10 @@ p {
 #bannerTicket {
  	background-color: #292929;
  	border-radius: 0 10px 10px 0px;
-    box-shadow: 3px 0px 2px -2px #808080 inset, 1px 1px 1px #000000, 1px 1px 1px #808080 inset;
+    box-shadow: 3px 0px 2px -2px #808080 inset, 1px 1px 1px #000000, 1px 1px 1px #808080 inset, 9px 0 4px -6px #000 inset;
     height: 140px;
-    width: 880px;
- 	margin-left: 120px;
+    width: 870px;
+ 	margin-left: 130px;
     position: relative;
     left: 0px;
     bottom: 40px;
@@ -88,14 +88,13 @@ p {
 
 #Li {
     margin-left: 5px;
-    }
+}
 
 #profilePhoto {
 	width: 120px;
 	height: 160px;
 	position: absolute;
 	left: 0px;
-	z-index: -1;
 }
 
 #profileRecess {
@@ -105,7 +104,7 @@ p {
 	left: 0px;
     margin-top: 10%;
     bottom: 30px;
-	box-shadow: 0px 0px 30px 5px rgba(0,0,0,.5) inset, 0 0 0 10px #FFFFFF;
+	box-shadow: 0 0 0 10px #FFFFFF, 0 5px 8px 8px #000;
 }
 
 #mainBox {
@@ -124,7 +123,7 @@ p {
 	height: 100%;
 	right: 0px;
     background-color: #292929;
-    box-shadow: -2px 0 5px #000000;
+    box-shadow: -2px 0 5px #000000, 2px 1px 1px #808080 inset;
     border-radius: 10px 0 0 10px;
     overflow: hidden;
 	-webkit-transition: width 0.3s ease-in;
@@ -140,7 +139,7 @@ p {
     padding: 20px;
     padding-right: 0px;
     overflow-y: auto;
-    box-shadow: 0px 1px 1px #808080 inset;
+    
 }
 
 .tab {
@@ -168,7 +167,7 @@ p {
 #about {
 	z-index: 1;
 	left: 0px;
-    box-shadow: -2px 0 5px #000000;
+    box-shadow: -2px 0 5px #000000, 2px 1px 1px #808080 inset;
 }
 
 #projects {
