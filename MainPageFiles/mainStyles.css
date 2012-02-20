@@ -27,7 +27,12 @@ header {
 
 h1 {
     font-weight: 700;
-    font-style: italic;   
+    font-style: italic;  
+    text-shadow: 0 0 1px rgba(214,216, 199, 1);
+}
+
+h2 {
+    text-shadow: 0 0 1px rgba(214,216, 199, 1);
 }
 
 header h1 {
@@ -39,21 +44,28 @@ header h2 {
     padding-left: 20px;
 }
 
-::-webkit-scrollbar {
-    width: 9px;
+p {
+    text-align: justify;
 }
 
+::-webkit-scrollbar {
+    width: 12px;
+}
+::-webkit-scrollbar-button{ 
+    height: 5px;
+}
 ::-webkit-scrollbar-thumb {
-    -webkit-border-radius: 10px;
-    border-radius: 10px;
+    -webkit-border-radius: 1px;
+    border-radius: 1px;
     max-width: 5px;
     background: rgba(255,255,255, 0.1);
+    box-shadow: 4px 0px 0px 2px #292929 inset;
 }
 
 #bannerTicket {
  	background-color: #292929;
  	border-radius: 0 10px 10px 0px;
-    box-shadow: 3px 0px 2px -2px #808080 inset;
+    box-shadow: 3px 0px 2px -2px #808080 inset, 1px 1px 1px #000000, 1px 1px 1px #808080 inset;
     height: 140px;
     width: 880px;
  	margin-left: 120px;
@@ -70,6 +82,10 @@ header h2 {
     right: 0;
 }
 
+#socialIcons :hover {
+    //insert shadow for icons 
+}
+
 #Li {
     margin-left: 5px;
     }
@@ -79,7 +95,6 @@ header h2 {
 	height: 160px;
 	position: absolute;
 	left: 0px;
-	border-radius: 10px;
 	z-index: -1;
 }
 
@@ -90,8 +105,7 @@ header h2 {
 	left: 0px;
     margin-top: 10%;
     bottom: 30px;
-	border-radius: 10px;
-	box-shadow: 0px 0px 30px 5px rgba(0,0,0,.5) inset, 1px 1px 2px #349160, -1px -1px 2px #113020, 1px 1px 5px #000000 inset;
+	box-shadow: 0px 0px 30px 5px rgba(0,0,0,.5) inset, 0 0 0 10px #FFFFFF;
 }
 
 #mainBox {
@@ -126,6 +140,7 @@ header h2 {
     padding: 20px;
     padding-right: 0px;
     overflow-y: auto;
+    box-shadow: 0px 1px 1px #808080 inset;
 }
 
 .tab {
@@ -135,7 +150,7 @@ header h2 {
     width: 50px;
     height: 100%;
     color:  rgba(255,255,255, 0.5);
-    background-image: url("images/fibreTexture.png");
+    background-image: url("images/pinhole.png");
     background-repeat: repeat;
     border-radius: 10px 0 0 10px;
     box-shadow: 3px 3px 5px rgba(255,255,255,0.1) inset, 3px 0px 3px -1px #000000;
