@@ -1,0 +1,60 @@
+#mainContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 800px;
+    height: 600px;
+    background-color: #000;
+    border-radius: 5px;
+}
+
+#score {
+    position: absolute;
+    left: 300px;
+    top: 10px;
+    width: 200px;
+    height: 50px;
+    background-color: #151515;
+    overflow: hidden;
+}
+
+#net {
+    position: relative;
+    margin-top: 0px;
+    margin-left: 399px;
+    width: 2px;
+    height: 600px;
+    background-color: #292929;
+    overflow: hidden;
+    z-index: 0;
+}
+
+#paddle1 {
+    position: absolute;
+    top: 250px;
+    left: 10px;
+    width: 10px;
+    height: 100px;
+    border-radius: 5px;
+    background-color: #FFFFFF;
+}
+
+#ball {
+    position: absolute;
+    top: 295px;
+    left: 20px;
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    background-color: #FFFFFF;
+}
+
+#paddle2 {
+    position: absolute;
+    top: 250px;
+    right: 10px;
+    width: 10px;
+    height: 100px;
+    border-radius: 5px;
+    background-color: #FFFFFF;
+}
