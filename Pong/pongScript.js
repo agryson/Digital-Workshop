@@ -18,17 +18,62 @@ var paddle1Pos = 250;
 var paddle2Pos = 250;
 var ballPosX = 295;
 var ballPosY = 20;
-var currentPlayer = 1;
 
-//I don't need to set the initial conditions here because I've done it in the 
-//stylesheet, but I'll still create an init function for the key listener
+//Set vars to know if a key is down or not
+var player1down = false;
+var player1up = false;
+var player2down = false;
+var player2up = false;
+
 function init() {
     paddle1 = document.getElementById("paddle1");
     paddle2 = document.getElementById("paddle2");
     ball = document.getElementById("ball");
-    document.onkeydown = keyListener;
+    document.onkeydown = keydown;
+    document.onkeyup = keyup;
 }
 
+//detect when a key is depressed and mark relevant var
+function keydown(e) {
+    switch (e.keyCode) {
+        case 38:
+            player2up = true;
+            break;
+        case 40:
+            player2down = true;
+            break;
+        case 82:
+            player1up = true;
+            break;
+        case 68:
+            player1down = true;
+            break;
+        default:
+            console.log("Key pressed is not assigned");
+    }
+}
+
+//detect when a key is released and mark relevant var
+function keyup(e) {
+    switch (e.keyCode) {
+        case 38:
+            player2up = false;
+            break;
+        case 40:
+            player2down = false;
+            break;
+        case 82:
+            player1up = false;
+            break;
+        case 68:
+            player1down = false;
+            break;
+        default:
+            console.log("Key released is not assigned");
+    }
+}
+
+/*
 //Now I set up the key listeners
 function keyListener(e) { //I need to alternate between the two players...
     if (monopoly(e.keyCode) === true && currentPlayer === 1) {
@@ -45,7 +90,7 @@ function keyListener(e) { //I need to alternate between the two players...
         }
 }    
 }
-    
+    */
     /*
     switch (e.keyCode) {
         case 38: //up arrow
