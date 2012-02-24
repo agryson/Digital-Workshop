@@ -18,6 +18,7 @@ var paddle1Pos = 250;
 var paddle2Pos = 250;
 var ballPosX = 295;
 var ballPosY = 20;
+var currentPlayer = 1;
 
 //I don't need to set the initial conditions here because I've done it in the 
 //stylesheet, but I'll still create an init function for the key listener
@@ -29,12 +30,21 @@ function init() {
 }
 
 //Now I set up the key listeners
-function keyListener(e) {
-    if (player1Move(e.keyCode) === false) {
-        player2Move(e.keyCode);
-    }
+function keyListener(e) { //I need to alternate between the two players...
+    if (monopoly(e.keyCode) === true && currentPlayer === 1) {
+        if (player2Move(e.keyCode) === false) {
+            player1Move(e.keyCode);
+        } else {
+            player1Move(e.keyCode);
+        }
+    } else if (monopoly(e.keyCode) === true && currentPlayer === 2) {
+        if (player1Move(e.keyCode) === false) {
+            player2Move(e.keyCode);
+        } else {
+            player1Move(e.keyCode);
+        }
 }    
-
+}
     
     /*
     switch (e.keyCode) {
