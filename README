@@ -1,12 +1,21 @@
-This is a test for pushing to the pre-prod branch
+*** ALEXANDER GRYSON'S DIGITAL WORKSHOP ***
+The digital workshop is my little space for tinkering with code and learning through hobbyist projects. 
 
-Just as a note, to push to git :
-git add .
-git commit -am "MESSAGE"
-git push origin BRANCH_NAME
+I use only online or mobile tools for all of my work:
+CODE: Cloud9 IDE, JSFiddle
+ART/DESIGN: Pixlr editor, Sketchbook Pro, Mockup.me
+NOTES & PLANNING: Google Docs
 
-To merge the branches:
-checkout to master, then:
-git merge BRANCH_TO_MERGE_WITH_MASTER
-then push the changes to git
+All of the projects are kept together for easy bulk download with the following hierarchy:
+ROOT 
+I_> MAIN PAGE
+   I_> PROJECT 1
+   I_> PROJECT 2
+   I_>  ...
+   I_> PROJECT n
 
+I try to keep them well documented and referenced but I am human so if you see anything missing or poorly explained, ping me and I'll update.
+Each project contains its own readme which explains the project and references.
+
+Because I'm only a hobbyist, I'm more likely to reinvent the wheel than come up with anything genuinely novel, but for those who, like me, learn better by looking at lots of code, everything here is free to download, use, reuse, hack, bend and distort for on only one condition : 
+*** REFERENCE ME AND LINK TO XXX WHERE END USERS OF YOUR CODE CAN SEE IT***
