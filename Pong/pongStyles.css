@@ -2,6 +2,7 @@ html {
     font-family: 'Droid Sans Mono', sans-serif;
     padding: 0;
     margin: 0:
+    overflow: hidden;
 }
 
 body {
@@ -25,9 +26,21 @@ body {
     margin: 0;
     border-radius: 5px;
     width: 800px;
-    height: 600px;
+    height: 500px;
     background-color: #000000;
-    -webkit-transition: background-color ease 3s;
+    text-align: center;
+    padding-top: 100px;
+    color: white;
+    -webkit-transition: background-color ease 1.5s, color ease 1.5s;
+}
+
+#startButton {
+    text-align: center;
+    border: none;
+    width: 80px;
+    height: 30px;
+    border-radius: 5px;
+    -webkit-transition: background-color ease 1.5s, color ease 1.5s;   
 }
 
 #score {

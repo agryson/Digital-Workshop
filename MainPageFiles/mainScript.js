@@ -15,7 +15,7 @@ var openAbout = function() {
 	if (document.getElementById("links").style.width > (linksWClosed + "px")) {
 		document.getElementById("links").style.width = linksWClosed + "px";
 	}
-}
+};
 
 var openProjects = function(obj) {
 	obj.style.width = projectsWOpen + "px";
@@ -25,7 +25,7 @@ var openProjects = function(obj) {
 	if (document.getElementById("links").style.width > (linksWClosed + "px")) {
 		document.getElementById("links").style.width = linksWClosed + "px";
 	}
-}
+};
 
 var openPlans = function(obj) {
 	obj.style.width = plansWOpen + "px";
@@ -35,7 +35,7 @@ var openPlans = function(obj) {
 	if (document.getElementById("links").style.width > (linksWClosed + "px")) {
 		document.getElementById("links").style.width = linksWClosed + "px";
 	}
-}
+};
 
 var openLinks = function(obj) {
 	obj.style.width = linksWOpen + "px";
@@ -45,12 +45,24 @@ var openLinks = function(obj) {
 	if (document.getElementById("plans").style.width < plansWOpen + "px") {
 		document.getElementById("plans").style.width = "900px";
 	}
-}
+};
 
-var popOut = function() {
-	console.log("called");
+var popOut = function(id) {
+	console.log("called id " + id);
 	document.getElementById("popBack").style.display = "inherit";
-	console.log(document.getElementById("popBack").style.display);
 	document.getElementById("popBox").style.display = "inherit";
-	console.log(document.getElementById("popBox").style.display);
+    document.getElementById("popBox").style.height = "600px";
+    switch(id) {
+        case document.getElementById("pongThumb"):
+            document.getElementById("popBox").innerHTML = "<iframe id='pongFrame' src='../Pong/pong.html' scrolling='no'></iframe>";
+            break;
+        default:
+        
+    }
+    
+};
+
+function popAway() {
+    document.getElementById("popBack").style.display = "none";
+    document.getElementById("popBox").style.display = "none";
 }
