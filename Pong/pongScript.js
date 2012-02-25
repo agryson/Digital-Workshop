@@ -9,21 +9,23 @@ var paddle2;
 //player can "serve" the ball with the spacebar, also I'll have two different scores)
 var dx = 0;
 var dy = 0;
-var currentPlayer = 1;
+
 //set the other initial conditions, these match the original value for top and/or 
 //left in the stylesheet
 var scorePlayer1 = 0;
 var scorePlayer2 = 0;
 var paddle1Pos = 250;
 var paddle2Pos = 250;
-var ballPosX = 295;
-var ballPosY = 20;
+var ballPosX = 20;
+var ballPosY = 295;
 
 //Set vars to know if a key is down or not
 var player1down = false;
 var player1up = false;
 var player2down = false;
 var player2up = false;
+var serveBar = false;
+var currentPlayer = 1;
 
 function init() {
     paddle1 = document.getElementById("paddle1");
@@ -31,22 +33,26 @@ function init() {
     ball = document.getElementById("ball");
     document.onkeydown = keydown;
     document.onkeyup = keyup;
+    mainLoop();
 }
 
 //detect when a key is depressed and mark relevant var
 function keydown(e) {
     switch (e.keyCode) {
+        case 82:
+            player1up = true;
+            break;
+        case 68:
+            player1down = true;
+            break;
         case 38:
             player2up = true;
             break;
         case 40:
             player2down = true;
             break;
-        case 82:
-            player1up = true;
-            break;
-        case 68:
-            player1down = true;
+        case 32:
+            serveBar = true;
             break;
         default:
             console.log("Key pressed is not assigned");
@@ -68,115 +74,112 @@ function keyup(e) {
         case 68:
             player1down = false;
             break;
+        case 32:
+            serveBar = false;
+            break;
         default:
             console.log("Key released is not assigned");
     }
 }
 
-/*
-//Now I set up the key listeners
-function keyListener(e) { //I need to alternate between the two players...
-    if (monopoly(e.keyCode) === true && currentPlayer === 1) {
-        if (player2Move(e.keyCode) === false) {
-            player1Move(e.keyCode);
-        } else {
-            player1Move(e.keyCode);
-        }
-    } else if (monopoly(e.keyCode) === true && currentPlayer === 2) {
-        if (player1Move(e.keyCode) === false) {
-            player2Move(e.keyCode);
-        } else {
-            player1Move(e.keyCode);
-        }
-}    
+//code to set various movements in place
+function move(){
+    ballPosX += dx;
+    ballPosY += dy;
+    ball.style.left = ballPosX + "px";
+    ball.style.top = ballPosY + "px";
+    
+    if (serveBar === true) {
+        serve();
+    }
+    if (player1up === true) {
+        p1up();
+    }
+    if (player1down === true) {
+        p1down();
+    }
+    if (player2up === true) {
+        p2up();
+    }
+    if (player2down === true) {
+        p2down();
+    }
 }
-    */
-    /*
-    switch (e.keyCode) {
-        case 38: //up arrow
-            if (paddle2.style.top != '0px') {
-                paddle2Pos -= 5;
-                paddle2.style.top = paddle2Pos + "px";
-            }
-            break;
-        
-        case 40: //down arrow
-            if (paddle2.style.top != '500px') {
-                paddle2Pos += 5;
-                paddle2.style.top = paddle2Pos + "px";
-            }
-            break;
+
+//code to serve ball, ensuring it's stationary first and checking who has it
+function serve() {
+    if (dx === 0 && dy === 0 && ballPosX > 10 && ballPosX < 790) { //if I don't check ball position too, a winning player can hold down serve to rapidly increment their score!
+        if (currentPlayer === 1) {
+            dx = 10;
+            dy = 5;
             
-        case 82: //r key
-            if (paddle1.style.top != '0px') {
-                paddle1Pos -= 5;
-                paddle1.style.top = paddle1Pos + "px";
-            }
-            break;
-        
-        case 68: //d key
-            if (paddle1.style.top != '500px') {
-                paddle1Pos += 5;
-                paddle1.style.top = paddle1Pos + "px";
-            }
-            break;
-        default :
-            console.log("Not an assigned key = " + e.keyCode);
-    }*/
-
-
-function player2Move(code) {
-    switch (code) {
-        case 38: //up arrow
-            if (paddle2.style.top != '0px') {
-                paddle2Pos -= 5;
-                paddle2.style.top = paddle2Pos + "px";
-                currentPlayer = 2;
-            }
-            break;
-        
-        case 40: //down arrow
-            if (paddle2.style.top != '500px') {
-                paddle2Pos += 5;
-                paddle2.style.top = paddle2Pos + "px";
-                currentPlayer = 2;
-            }
-            break;
-        default:
-            return false;
+        } else {
+            dx = -10;
+            dy = -5;
+            ball.style.left = ballPosX + "px";
+            ball.style.top = ballPosY + "px";
+        }
     }
 }
 
-function player1Move(code) {
-    switch (code) {
-        case 82: //r key
-            if (paddle1.style.top != '0px') {
-                paddle1Pos -= 5;
-                paddle1.style.top = paddle1Pos + "px";
-                currentPlayer = 1;
-            }
-            break;
-        
-        case 68: //d key
-            if (paddle1.style.top != '500px') {
-                paddle1Pos += 5;
-                paddle1.style.top = paddle1Pos + "px";
-                currentPlayer = 1;
-            }
-            break;
-        default :
-            return false;
+//code to move player 1 up
+function p1up(){
+    if (paddle1Pos > 0) {
+        paddle1Pos -= 5;
+        paddle1.style.top = paddle1Pos + "px";
     }
 }
 
-//If a player monopolizes the hold down key, I need to check if the other player is 
-//trying to play too!
-function monopoly(passedE) {
-    var current = passedE;
-    var last;
-    if (current != last) {
-        return false;
-    } else {
-        return true;
+//code to move player 1 down
+function p1down() {
+    if (paddle1Pos < 500) {
+        paddle1Pos += 5;
+        paddle1.style.top = paddle1Pos + "px";
     }
+}
+
+//code to move player 2 up
+function p2up(){
+    if (paddle2Pos > 0) {
+        paddle2Pos -= 5;
+        paddle2.style.top = paddle2Pos + "px";
+    }
+}
+
+//code to move player 2 down
+function p2down() {
+    if (paddle2Pos < 500) {
+        paddle2Pos += 5;
+        paddle2.style.top = paddle2Pos + "px";
+    }
+}
+
+function ping() {
+    if (ballPosX < 20 - dx && ballPosY > paddle1Pos - 10 && ballPosY < paddle1Pos + 100 && dx !== 0) {
+            dx = dx * -1;
+    }
+    if (ballPosX > 770 - dx && ballPosY > paddle2Pos - 10 && ballPosY < paddle2Pos + 100 && dx !== 0) {
+            dx = dx * -1;
+    }
+    if (ballPosX === 0 && dx !== 0 && dy !== 0) { //If I don't check the ball speed, the score will increment forever
+        dx = 0; //should stop game here because we've moved beyond the back line
+        dy = 0;
+        scorePlayer2 += 1;
+        console.log("player 2 + " + scorePlayer2);
+    }
+    if (ballPosX === 790 && dx !== 0 && dy !== 0) { //If I don't check the ball speed, the score will increment forever
+        dx = 0; //should stop game here because we've moved beyond the back line
+        dy = 0;
+        scorePlayer1 += 1;
+        console.log("player 1 + " + scorePlayer1);
+    }
+    if (ballPosY <= 0 || ballPosY >= 590) {
+        dy = dy * -1;
+    }
+}
+
+function mainLoop() {
+    ping();
+    move();
+    setTimeout("mainLoop();", 50);
 }
