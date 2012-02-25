@@ -37,8 +37,16 @@ function init() {
     scoreBoard = document.getElementById("score");
     document.onkeydown = keydown;
     document.onkeyup = keyup;
-    document.getElementById("fadein").style.backgroundColor = "transparent";
     mainLoop();
+}
+
+function start() {
+    console.log("clicked start");
+    init();
+    document.getElementById("fadein").style.backgroundColor = "transparent";
+    document.getElementById("fadein").style.color = "transparent";
+    document.getElementById("startButton").style.color = "transparent";
+    document.getElementById("startButton").style.backgroundColor = "transparent";
 }
 
 //detect when a key is depressed and mark relevant var
@@ -116,10 +124,10 @@ function serve() {
     if (dx === 0 && dy === 0 && ballPosX > 10 && ballPosX < 790) { //if I don't check ball position too, a winning player can hold down serve to rapidly increment their score!
         
         if (currentPlayer === 1) {
-            hit1();
+            hit1(true);
             
         } else {
-            hit2();
+            hit2(true);
         }
     }
 }
@@ -199,19 +207,19 @@ function ping() {
     if (ballPosX > 770 - dx && dx !== 0) {
             hit2();
     }
-    if (ballPosX === 0 && dx !== 0 && dy !== 0) { //If I don't check the ball speed, the score will increment forever
+    if (ballPosX <= 0 && dx !== 0) { //If I don't check the ball speed, the score will increment forever
         dx = 0; //should stop game here because we've moved beyond the back line
         dy = 0;
         scorePlayer2 += 1;
         reset(1);
     }
-    if (ballPosX === 790 && dx !== 0 && dy !== 0) { //If I don't check the ball speed, the score will increment forever
+    if (ballPosX >= 790 && dx !== 0) { //If I don't check the ball speed, the score will increment forever
         dx = 0; //should stop game here because we've moved beyond the back line
         dy = 0;
         scorePlayer1 += 1;
         reset(2);
     }
-    if (ballPosY <= 0 || ballPosY >= 590) {
+    if (ballPosY <= 1 || ballPosY >= 589) {
         dy = dy * -1;
     }
 }

@@ -46,6 +46,7 @@ header h2 {
 
 p {
     text-align: justify;
+    text-indent: 50px;
 }
 
 ::-webkit-scrollbar {
@@ -164,6 +165,20 @@ p {
     -moz-transform: rotate(-90deg);
 }
 
+.thumb{
+    float: left;
+    margin-right: 15px;
+}
+
+#pongThumb {
+   
+}
+
+#pongFrame {
+    width: 800px;
+    height: 600px;
+    border: 0;
+}
 #about {
 	z-index: 1;
 	left: 0px;
@@ -192,22 +207,23 @@ p {
   z-index: 20;
   background-color: rgba(0,0,0,0.5);
   position: absolute;
-  top:0%;
-  left: 0%;
+  top:0;
+  left: 0;
   height: 100%;
   width: 100%;
   display: none;
 }
 
 #popBox {
-  z-index: 21;
-  background-color: #FFFFFF;
-  height: 300px;
-  width: 600px;
-  position: absolute;
-  top:25%;
-  left: 25%;
-  display: none;
+    position: relative;
+    z-index: 21;
+    margin: auto;
+    margin-top: 15%;
+    background-color: #000;
+    height: 0;
+    width: 800px;
+    display: none;
+    -webkit-transition: height 1.5s ease;
 }
 
 
