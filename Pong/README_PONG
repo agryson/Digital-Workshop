@@ -1,0 +1,14 @@
+This code was heavily inspired by this tutorial on DevX : 
+    http://www.devx.com/webdev/10MinuteSolution/27134/0/page/1
+
+I simply edited it to work with two paddles, and have appropriate scoring and reset
+conditions.
+
+An advantage of my implementation is that I don't use images so theoretically it is 
+lower bandwidth.
+
+This first version uses divs but now that I have the game logic right, I'll be 
+creating a version taht uses the HTML canvas next.
+
+I've mainly documented the javascript, but there are comments in the HTML to show 
+where everything goes.

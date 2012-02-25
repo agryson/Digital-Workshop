@@ -27,7 +27,7 @@
         </div>
 	</header>
 	
-	<body>
+	<body onLoad="init();">
 	
 		<div id="mainBox">
 		
@@ -57,12 +57,9 @@
                 <div class="contentBox">
                         <img class="thumb" id="pongThumb" src="../Pong/PongScreenShot.png" onclick="popOut(this)"></img>
                         <h3>Pong 1</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean molestie, ligula porttitor auctor porttitor, mauris velit viverra nisi, accumsan posuere lacus ipsum luctus nisl. Quisque scelerisque vulputate imperdiet. Nunc dolor urna, auctor a suscipit vitae, varius in magna. Nulla imperdiet imperdiet ultrices. In hac habitasse platea dictumst. Integer mi nunc, tincidunt quis tincidunt ac, varius eget tortor. Pellentesque tellus lectus, molestie nec venenatis non, semper eget sapien. Proin vel massa neque. Nunc et quam urna, nec hendrerit ante.</p>
-        		        <p>Lorem ipsum dlor sit amet, consectetur adipiscing elit. Aenean molestie, ligula porttitor auctor porttitor, mauris velit viverra nisi, accumsan posuere lacus ipsum luctus nisl. Quisque scelerisque vulputate imperdiet. Nunc dolor urna, auctor a suscipit vitae, varius in magna. Nulla imperdiet imperdiet ultrices. In hac habitasse platea dictumst. Integer mi nunc, tincidunt quis tincidunt ac, varius eget tortor. Pellentesque tellus lectus, molestie nec venenatis non, semper eget sapien. Proin vel massa neque. Nunc et quam urna, nec hendrerit ante.</p>
-        		        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean molestie, ligula porttitor auctor porttitor, mauris velit viverra nisi, accumsan posuere lacus ipsum luctus nisl. Quisque scelerisque vulputate imperdiet. Nunc dolor urna, auctor a suscipit vitae, varius in magna. Nulla imperdiet imperdiet ultrices. In hac habitasse platea dictumst. Integer mi nunc, tincidunt quis tincidunt ac, varius eget tortor. Pellentesque tellus lectus, molestie nec venenatis non, semper eget sapien. Proin vel massa neque. Nunc et quam urna, nec hendrerit ante.</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean molestie, ligula porttitor auctor porttitor, mauris velit viverra nisi, accumsan posuere lacus ipsum luctus nisl. Quisque scelerisque vulputate imperdiet. Nunc dolor urna, auctor a suscipit vitae, varius in magna. Nulla imperdiet imperdiet ultrices. In hac habitasse platea dictumst. Integer mi nunc, tincidunt quis tincidunt ac, varius eget tortor. Pellentesque tellus lectus, molestie nec venenatis non, semper eget sapien. Proin vel massa neque. Nunc et quam urna, nec hendrerit ante.</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean molestie, ligula porttitor auctor porttitor, mauris velit viverra nisi, accumsan posuere lacus ipsum luctus nisl. Quisque scelerisque vulputate imperdiet. Nunc dolor urna, auctor a suscipit vitae, varius in magna. Nulla imperdiet imperdiet ultrices. In hac habitasse platea dictumst. Integer mi nunc, tincidunt quis tincidunt ac, varius eget tortor. Pellentesque tellus lectus, molestie nec venenatis non, semper eget sapien. Proin vel massa neque. Nunc et quam urna, nec hendrerit ante.</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean molestie, ligula porttitor auctor porttitor, mauris velit viverra nisi, accumsan posuere lacus ipsum luctus nisl. Quisque scelerisque vulputate imperdiet. Nunc dolor urna, auctor a suscipit vitae, varius in magna. Nulla imperdiet imperdiet ultrices. In hac habitasse platea dictumst. Integer mi nunc, tincidunt quis tincidunt ac, varius eget tortor. Pellentesque tellus lectus, molestie nec venenatis non, semper eget sapien. Proin vel massa neque. Nunc et quam urna, nec hendrerit ante.</p>
+                        <p>This first version of Pong was greatly inspired by <a href="http://www.devx.com/webdev/10MinuteSolution/27134/0/page/1">this tutorial</a> from <a href="http://www.devx.com/">Dev<sup>x</sup></a>. The code should be well documented for those parts that I changed. The game logic is a little different simply because I'm dealing with two different paddles.</p>
+        		        <p>This meant that a user (being a two-player game) could block the other's movements simply by holding down a key! Preventing that and having different reflections for different parts of the paddle were the greatest challenges in this project, teaching me a lot about reading input and having clean if loops! Click on the image to to try it out.</p>
+        		        <p>This version uses divs as I wanted to concentrate on the game logic, but I'll be creating another version that uses the HTML canvas tag.</p>
 				</div>
 			</div>
 			
@@ -101,6 +98,7 @@
 		</div>
 		
 		<div id="popBack" onclick="popAway();">
+            <h3>Click anywhere outside of the box to close</h3>
             <div id="popBox">
     	    </div>
 		</div>

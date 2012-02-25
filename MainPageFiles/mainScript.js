@@ -5,6 +5,12 @@ var projectsWClosed = 150;
 var plansWClosed = 100;
 var linksWClosed = 50;
 
+var esc; //listen for excape key
+
+function init() {
+    document.onkeydown = keydown;
+}
+
 var openAbout = function() {
     if (document.getElementById("projects").style.width > (projectsWClosed + "px")) {
 		document.getElementById("projects").style.width = projectsWClosed + "px";
@@ -50,8 +56,7 @@ var openLinks = function(obj) {
 var popOut = function(id) {
 	console.log("called id " + id);
 	document.getElementById("popBack").style.display = "inherit";
-	document.getElementById("popBox").style.display = "inherit";
-    document.getElementById("popBox").style.height = "600px";
+	document.getElementById("popBox").style.display = "block";
     switch(id) {
         case document.getElementById("pongThumb"):
             document.getElementById("popBox").innerHTML = "<iframe id='pongFrame' src='../Pong/pong.html' scrolling='no'></iframe>";
@@ -59,9 +64,13 @@ var popOut = function(id) {
         default:
         
     }
-    
 };
 
+function keydown(e) {
+    if (e.keyCode === 27) {
+        popAway();
+    }
+}
 function popAway() {
     document.getElementById("popBack").style.display = "none";
     document.getElementById("popBox").style.display = "none";
