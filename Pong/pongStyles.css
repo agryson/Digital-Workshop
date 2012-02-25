@@ -1,17 +1,42 @@
+html {
+    font-family: 'Droid Sans Mono', sans-serif;
+    padding: 0;
+    margin: 0:
+}
+
+body {
+    padding: 0;   
+    margin: 0;
+}
+
 #mainContainer {
     position: absolute;
     top: 0;
     left: 0;
     width: 800px;
     height: 600px;
-    background-color: #000;
+    background-color: #000000;
     border-radius: 5px;
+}
+
+#fadein {
+    position: relative;
+    z-index: 5;
+    margin: 0;
+    border-radius: 5px;
+    width: 800px;
+    height: 600px;
+    background-color: #000000;
+    -webkit-transition: background-color ease 3s;
 }
 
 #score {
     position: absolute;
     left: 300px;
     top: 10px;
+    text-align: center;
+    color: white;
+    font-size: 40px;
     width: 200px;
     height: 50px;
     background-color: #151515;
@@ -20,10 +45,10 @@
 
 #net {
     position: relative;
-    margin-top: 0px;
+    margin-top: 60px;
     margin-left: 399px;
     width: 2px;
-    height: 600px;
+    height: 540px;
     background-color: #292929;
     overflow: hidden;
     z-index: 0;
