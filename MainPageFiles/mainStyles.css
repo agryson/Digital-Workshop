@@ -49,6 +49,12 @@ p {
     text-indent: 50px;
 }
 
+a {
+    text-decoration: none;
+    color: #faf6a5;
+    
+}
+
 ::-webkit-scrollbar {
     width: 12px;
 }
@@ -175,9 +181,11 @@ p {
 }
 
 #pongFrame {
+    margin: auto;
     width: 800px;
     height: 600px;
     border: 0;
+    overflow: hidden;
 }
 #about {
 	z-index: 1;
@@ -204,26 +212,27 @@ p {
 }
 
 #popBack {
-  z-index: 20;
-  background-color: rgba(0,0,0,0.5);
-  position: absolute;
-  top:0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  display: none;
+    text-align: center;
+    z-index: 20;
+    background-color: rgba(0,0,0,0.7);
+    position: absolute;
+    top:0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: none;
 }
 
 #popBox {
     position: relative;
     z-index: 21;
-    margin: auto;
-    margin-top: 15%;
-    background-color: #000;
-    height: 0;
     width: 800px;
+    margin: auto;
     display: none;
-    -webkit-transition: height 1.5s ease;
+    margin-top: 15%;
+    height: 600px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px -1px #FFFFFF;
 }
 
 

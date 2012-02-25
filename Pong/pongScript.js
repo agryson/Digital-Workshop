@@ -34,6 +34,17 @@ hit() functions*/
 var currentPlayer = 1;
 var ace;
 
+/*When I click to start, I initialize everything and fade nicely from the start 
+screen to the game*/
+function start() {
+    console.log("clicked start");
+    init();
+    document.getElementById("fadein").style.backgroundColor = "transparent";
+    document.getElementById("fadein").style.color = "transparent";
+    document.getElementById("startButton").style.color = "transparent";
+    document.getElementById("startButton").style.backgroundColor = "transparent";
+}
+
 /*Initialize the various parts so that I can reference them and set the key listeners
 before finally starting the main loop*/
 function init() {
@@ -44,17 +55,6 @@ function init() {
     document.onkeydown = keydown;
     document.onkeyup = keyup;
     mainLoop();
-}
-
-/*When I click to start, I initialize everything and fade nicely from the start 
-screen to the game*/
-function start() {
-    console.log("clicked start");
-    init();
-    document.getElementById("fadein").style.backgroundColor = "transparent";
-    document.getElementById("fadein").style.color = "transparent";
-    document.getElementById("startButton").style.color = "transparent";
-    document.getElementById("startButton").style.backgroundColor = "transparent";
 }
 
 /*detect when a key is depressed and mark relevant var*/
