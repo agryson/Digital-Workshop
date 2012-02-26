@@ -6,36 +6,33 @@
 		<link href='http://fonts.googleapis.com/css?family=Ubuntu:400,500italic,700italic' rel='stylesheet' type='text/css'>
 		<link href="mainStyles.css" rel="stylesheet" type="text/css" media="all">
 		<meta charset="UTF-8">
-		<title>Alexander Gryson's Digital Workshop</title>
-        <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-		
+		<title>Alex's Digital Workshop</title>
+        <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
 		<script language="JavaScript" src="mainScript.js">			
 		</script>		
 	</head>
-	
-	<header>
-        <span id="profileRecess">
-            <img src="images/profile.png" id="profilePhoto"></img>
+
+	<header class="glassPanel" id="topBar">
+        <span>
+            <img id="photo" src="images/profile.png"></img>
+            <span id="photoFrame"></span>
+        <span>
+        <h1>Alex's Digital Workshop</h1>
+        <h2>Experiments in HTML5 as a hobbyist</h2>
+        <span id="social">
+            <img src="images/gplus.png"></img>
+            <img src="images/li.gif"></img>
         </span>
-        <div id="bannerTicket">
-            <span id="socialIcons">
-                <a href="https://plus.google.com/111846395271727683726/about"><img src="images/gplus.png"></a>
-                <a href="http://fr.linkedin.com/in/agryson" id="Li"><img src="images/li.gif"></a>
-            </span>
-            <h1>Alex's Digital Workshop</h1>
-            <h2>Experiments in HTML5 as a hobbyist</h2>
-        </div>
 	</header>
 	
-	<body onLoad="init();">
-	
-		<div id="mainBox">
-		
-			<div class="indexCard" id="about" onClick="openAbout();">
-                <div class="tab">
-				    <span><h2 class="indexTitle">About...</h2></span>
-                </div>
-                <div class="contentBox">
+	<body onLoad="init()" >
+        
+	    <div id="container">
+        
+        
+            <div class="glassPanel panelLeft" id="panel1" onClick="expand(panel1)">
+                <div class="panelContainer">
+                    <h2>About...</h2>
                     <h3>...this site</h3>
                     <p>This site is more or less a launchpad for my various flirtations with HTML5, which in the mid term will focus on web-based game development. Since it's hosted on Google's App Engine, there's a lot of room for some experimentation in server side stuff as well, since long term I'd  like to go further than just front end experiences and move towards full bottom-to-top apps.</p>
                     <p>The projects tab shows you the projects which I qualify as a good beta or release level, while the plans tab gives you a sneak preview off what's in the pipeline, including buggier, alpha and early beta stuff.</p>
@@ -47,62 +44,44 @@
                     <p>I first came across HTML in secondary school and loved it but didn't really go further than the most basic stuff. Later, studying physics in college we got to play with terminals and again touched on coding for the web but with so much else going on, it once more fell by the wayside. Then, back in 2008 around the end of my masters I finally got around to installing Linux (I started with Ubuntu, like many others) and computers suddenly weren't the fragile black boxes I had always perceived them as.</p>
                     <p>As an English teacher in Paris after my masters, I had the time and motivation to get my hands dirty, starting as many do by fixing computers for friends and colleagues, recovering data, letting people know that a clean Linux install will always be preferable to a pirated windows and not as difficult to use as they might think. All of this of course was great as a gateway drug to something a little bit more involved and in 2010 I got my first Android (the trustworthy Nexus One) and quickly set about learning the basics of Java and  Android programming. I released my first app in July of 2010, an interactive adventure book.</p>
                     <p>Yet again, time became a precious resource when I changed jobs and my development returned to background noise levels - which was a pity because I work for a software company! Then at the beginning of 2012 I got to work on a project that had some web design work needed. I didn't do that work unfortunately but it gave me enough exposure to relapse and with the same energy that I applied to learning Android, I attacked HTML5. The result of that, you see before you.</p>
- 		        </div>
-			</div>
-			
-			<div class="indexCard" id="projects" onclick="openProjects(this);">
-				<div class="tab">
-                    <span><h2 class="indexTitle">Projects</h2></span>
-				</div>
-                <div class="contentBox">
-                        <img class="thumb" id="pongThumb" src="../Pong/PongScreenShot.png" onclick="popOut(this)"></img>
-                        <h3>Pong 1</h3>
-                        <p>This first version of Pong was greatly inspired by <a href="http://www.devx.com/webdev/10MinuteSolution/27134/0/page/1">this tutorial</a> from <a href="http://www.devx.com/">Dev<sup>x</sup></a>. The code should be well documented for those parts that I changed. The game logic is a little different simply because I'm dealing with two different paddles.</p>
-        		        <p>This meant that a user (being a two-player game) could block the other's movements simply by holding down a key! Preventing that and having different reflections for different parts of the paddle were the greatest challenges in this project, teaching me a lot about reading input and having clean if loops! Click on the image to to try it out.</p>
-        		        <p>This version uses divs as I wanted to concentrate on the game logic, but I'll be creating another version that uses the HTML canvas tag.</p>
-				</div>
-			</div>
-			
-			<div class="indexCard" id="plans" onclick="openPlans(this);">
-				<div class="tab">    
-                    <span><h2 class="indexTitle">Plans</h2></span>
-				</div>
-                <div class="contentBox">
-                    
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean molestie, ligula porttitor auctor porttitor, mauris velit viverra nisi, accumsan posuere lacus ipsum luctus nisl. Quisque scelerisque vulputate imperdiet. Nunc dolor urna, auctor a suscipit vitae, varius in magna. Nulla imperdiet imperdiet ultrices. In hac habitasse platea dictumst. Integer mi nunc, tincidunt quis tincidunt ac, varius eget tortor. Pellentesque tellus lectus, molestie nec venenatis non, semper eget sapien. Proin vel massa neque. Nunc et quam urna, nec hendrerit ante.</p>
-        		        <p>Lorem ipsum dlor sit amet, consectetur adipiscing elit. Aenean molestie, ligula porttitor auctor porttitor, mauris velit viverra nisi, accumsan posuere lacus ipsum luctus nisl. Quisque scelerisque vulputate imperdiet. Nunc dolor urna, auctor a suscipit vitae, varius in magna. Nulla imperdiet imperdiet ultrices. In hac habitasse platea dictumst. Integer mi nunc, tincidunt quis tincidunt ac, varius eget tortor. Pellentesque tellus lectus, molestie nec venenatis non, semper eget sapien. Proin vel massa neque. Nunc et quam urna, nec hendrerit ante.</p>
-        		        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean molestie, ligula porttitor auctor porttitor, mauris velit viverra nisi, accumsan posuere lacus ipsum luctus nisl. Quisque scelerisque vulputate imperdiet. Nunc dolor urna, auctor a suscipit vitae, varius in magna. Nulla imperdiet imperdiet ultrices. In hac habitasse platea dictumst. Integer mi nunc, tincidunt quis tincidunt ac, varius eget tortor. Pellentesque tellus lectus, molestie nec venenatis non, semper eget sapien. Proin vel massa neque. Nunc et quam urna, nec hendrerit ante.</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean molestie, ligula porttitor auctor porttitor, mauris velit viverra nisi, accumsan posuere lacus ipsum luctus nisl. Quisque scelerisque vulputate imperdiet. Nunc dolor urna, auctor a suscipit vitae, varius in magna. Nulla imperdiet imperdiet ultrices. In hac habitasse platea dictumst. Integer mi nunc, tincidunt quis tincidunt ac, varius eget tortor. Pellentesque tellus lectus, molestie nec venenatis non, semper eget sapien. Proin vel massa neque. Nunc et quam urna, nec hendrerit ante.</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean molestie, ligula porttitor auctor porttitor, mauris velit viverra nisi, accumsan posuere lacus ipsum luctus nisl. Quisque scelerisque vulputate imperdiet. Nunc dolor urna, auctor a suscipit vitae, varius in magna. Nulla imperdiet imperdiet ultrices. In hac habitasse platea dictumst. Integer mi nunc, tincidunt quis tincidunt ac, varius eget tortor. Pellentesque tellus lectus, molestie nec venenatis non, semper eget sapien. Proin vel massa neque. Nunc et quam urna, nec hendrerit ante.</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean molestie, ligula porttitor auctor porttitor, mauris velit viverra nisi, accumsan posuere lacus ipsum luctus nisl. Quisque scelerisque vulputate imperdiet. Nunc dolor urna, auctor a suscipit vitae, varius in magna. Nulla imperdiet imperdiet ultrices. In hac habitasse platea dictumst. Integer mi nunc, tincidunt quis tincidunt ac, varius eget tortor. Pellentesque tellus lectus, molestie nec venenatis non, semper eget sapien. Proin vel massa neque. Nunc et quam urna, nec hendrerit ante.</p>
-    		
+                </div>     
+            </div>
+            
+            
+            <div class="glassPanel panelRight" id="panel2" onClick="expand(panel2)">
+                <div class="panelContainer">
+                    <img src="../Pong/PongScreenShot.png"></img>
                 </div>
-			</div>
-			
-			<div class="indexCard" id="links" onclick="openLinks(this);">
-				<div class="tab">    
-                    <span><h2 class="indexTitle">Links</h2></span>
-				</div>
-                <div class="contentBox">
-					
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean molestie, ligula porttitor auctor porttitor, mauris velit viverra nisi, accumsan posuere lacus ipsum luctus nisl. Quisque scelerisque vulputate imperdiet. Nunc dolor urna, auctor a suscipit vitae, varius in magna. Nulla imperdiet imperdiet ultrices. In hac habitasse platea dictumst. Integer mi nunc, tincidunt quis tincidunt ac, varius eget tortor. Pellentesque tellus lectus, molestie nec venenatis non, semper eget sapien. Proin vel massa neque. Nunc et quam urna, nec hendrerit ante.</p>
-        		        <p>Lorem ipsum dlor sit amet, consectetur adipiscing elit. Aenean molestie, ligula porttitor auctor porttitor, mauris velit viverra nisi, accumsan posuere lacus ipsum luctus nisl. Quisque scelerisque vulputate imperdiet. Nunc dolor urna, auctor a suscipit vitae, varius in magna. Nulla imperdiet imperdiet ultrices. In hac habitasse platea dictumst. Integer mi nunc, tincidunt quis tincidunt ac, varius eget tortor. Pellentesque tellus lectus, molestie nec venenatis non, semper eget sapien. Proin vel massa neque. Nunc et quam urna, nec hendrerit ante.</p>
-        		        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean molestie, ligula porttitor auctor porttitor, mauris velit viverra nisi, accumsan posuere lacus ipsum luctus nisl. Quisque scelerisque vulputate imperdiet. Nunc dolor urna, auctor a suscipit vitae, varius in magna. Nulla imperdiet imperdiet ultrices. In hac habitasse platea dictumst. Integer mi nunc, tincidunt quis tincidunt ac, varius eget tortor. Pellentesque tellus lectus, molestie nec venenatis non, semper eget sapien. Proin vel massa neque. Nunc et quam urna, nec hendrerit ante.</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean molestie, ligula porttitor auctor porttitor, mauris velit viverra nisi, accumsan posuere lacus ipsum luctus nisl. Quisque scelerisque vulputate imperdiet. Nunc dolor urna, auctor a suscipit vitae, varius in magna. Nulla imperdiet imperdiet ultrices. In hac habitasse platea dictumst. Integer mi nunc, tincidunt quis tincidunt ac, varius eget tortor. Pellentesque tellus lectus, molestie nec venenatis non, semper eget sapien. Proin vel massa neque. Nunc et quam urna, nec hendrerit ante.</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean molestie, ligula porttitor auctor porttitor, mauris velit viverra nisi, accumsan posuere lacus ipsum luctus nisl. Quisque scelerisque vulputate imperdiet. Nunc dolor urna, auctor a suscipit vitae, varius in magna. Nulla imperdiet imperdiet ultrices. In hac habitasse platea dictumst. Integer mi nunc, tincidunt quis tincidunt ac, varius eget tortor. Pellentesque tellus lectus, molestie nec venenatis non, semper eget sapien. Proin vel massa neque. Nunc et quam urna, nec hendrerit ante.</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean molestie, ligula porttitor auctor porttitor, mauris velit viverra nisi, accumsan posuere lacus ipsum luctus nisl. Quisque scelerisque vulputate imperdiet. Nunc dolor urna, auctor a suscipit vitae, varius in magna. Nulla imperdiet imperdiet ultrices. In hac habitasse platea dictumst. Integer mi nunc, tincidunt quis tincidunt ac, varius eget tortor. Pellentesque tellus lectus, molestie nec venenatis non, semper eget sapien. Proin vel massa neque. Nunc et quam urna, nec hendrerit ante.</p>
-    		
-				</div>
-			</div>
-			
-		</div>
-		<div id="popBack" onclick="popAway();">
-            <h3>Click anywhere outside of the box to close</h3>
-            <div id="popBox">
-    	    </div>
-		</div>
-		
-		
+            </div>
+            
+            
+            <div class="glassPanel panelLeft" id="panel3" onClick="expand(panel3)">
+                <div class="panelContainer">
+                </div>
+            </div>
+            
+            
+            <div class="glassPanel panelRight" id="panel4" onClick="expand(panel4)">
+                <div class="panelContainer">
+                </div>
+            </div>
+            
+            
+            <div class="glassPanel panelLeft" id="panel5" onClick="expand(panel5)">
+                <div class="panelContainer">
+                </div>
+            </div>
+            
+            
+            <div class="glassPanel panelRight" id="panel6" onClick="expand(panel6)">
+                <div class="panelContainer">
+                </div>
+            </div>
+            
+            
+            <div class="glassPanel panelLeft" id="linksPanel" onClick="expand(panel7)">
+            </div>
+        </div>
 	</body>
 
 </html>
