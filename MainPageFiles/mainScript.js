@@ -51,6 +51,7 @@ function expand(panel) {                                                        
 function closeAll() {                                                                                       //loops through array and closes the open panel before returning all panels to starting positions
 	for(var j = 0; j < panelsArray.length; j++) {
 		if (panelsArray[j][4] === true) {
+            console.log(panelsArray[j][1].style.width);
 			panelsArray[j][1].style.width = origWidth + "%";
 			panelsArray[j][1].style.height = origHeight + "px";
             panelsArray[j][4] = false;
@@ -78,19 +79,20 @@ function startingPositions() {																				//Returns all shifted panels t
 }
 
 function shiftOthers(num) {                                                                                   //Shifts all but the clicked upon panel to make room for expansion
+    console.log(num);
     var j = num - 1;
     if (j < 0) {
         j = 0;
     }
+    console.log("j" + j);
 	if (panelsArray[num][0]%2 === 0 && num < panelsArray.length) {                                              //if the panel is on the right (but stop at the last one)
-        while (j <= panelsArray.length) {                                                        //for every panel after and the one to the left of it
+        while (j < panelsArray.length) {                                                        //for every panel after and the one to the left of it
             if (panelsArray[j][0]%2 !== 0 && panelsArray[j][3] === false && panelsArray[j][2] === false) {                                                                //if it's odd (on the left)
 				console.log(panelsArray[j][5]);
                 panelsArray[j][5] += (bump * 2);
                 panelsArray[j][1].style.top = panelsArray[j][5] + "px";//bump it down twice                    //it's applying this six times to same thing
                 panelsArray[j][3] = true;//mark it as bumped down twice
                 console.log(panelsArray[j][5]);			
-    		
             } else if(j !== num && panelsArray[j][3] === false && panelsArray[j][2] === false) {                                                                            //if it's on the right (and not the one we've clicked on)
 				console.log("theory");
                 panelsArray[j][5] += bump;
