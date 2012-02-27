@@ -64,56 +64,51 @@ function startingPositions() {																				//Returns all shifted panels t
 	var step = 0;
     while ( step < panelsArray.length) {
         console.log("startingPositions" + step);
-        if(panelsArray[step][2] === true){                                                                     //if shifted once, shift it back up one
+        if(panelsArray[step][2] === true){                                                                  //if shifted once, shift it back up one
             panelsArray[step][5] -= bump;
             panelsArray[step][1].style.top = panelsArray[step][5] + "px";
-            panelsArray[step][2] = false;                                                                      //then reset our marker
-		} else if (panelsArray[step][3] === true){                                                             //if shifted down twice, shift back up twice
+            panelsArray[step][2] = false;                                                                   //then reset our marker
+		} else if (panelsArray[step][3] === true){                                                          //if shifted down twice, shift back up twice
 			panelsArray[step][5] -= (bump * 2);
             panelsArray[step][1].style.top = panelsArray[step][5] + "px";
-			panelsArray[step][3] = false;                                                                      //then reset our marker
+			panelsArray[step][3] = false;                                                                   //then reset our marker
 		}
         step++;	
     
     }
 }
 
-function shiftOthers(num) {                                                                                   //Shifts all but the clicked upon panel to make room for expansion
+function shiftOthers(num) {                                                                                 //Shifts all but the clicked upon panel to make room for expansion
+    var clickedOnThis = num;
     console.log(num);
-    var j = num - 1;
-    if (j < 0) {
-        j = 0;
-    }
-    console.log("j" + j);
-	if (panelsArray[num][0]%2 === 0 && num < panelsArray.length) {                                              //if the panel is on the right (but stop at the last one)
-        while (j < panelsArray.length) {                                                        //for every panel after and the one to the left of it
-            if (panelsArray[j][0]%2 !== 0 && panelsArray[j][3] === false && panelsArray[j][2] === false) {                                                                //if it's odd (on the left)
-				console.log(panelsArray[j][5]);
-                panelsArray[j][5] += (bump * 2);
-                panelsArray[j][1].style.top = panelsArray[j][5] + "px";//bump it down twice                    //it's applying this six times to same thing
-                panelsArray[j][3] = true;//mark it as bumped down twice
-                console.log(panelsArray[j][5]);			
-            } else if(j !== num && panelsArray[j][3] === false && panelsArray[j][2] === false) {                                                                            //if it's on the right (and not the one we've clicked on)
+	if (panelsArray[num][0]%2 === 0 && num < panelsArray.length) {                                          //if the panel is on the right (but stop at the last one)
+        while (num < panelsArray.length) {                                                                    //for every panel after and the one to the left of it
+            if (panelsArray[num][0]%2 !== 0 && panelsArray[num][3] === false && panelsArray[num][2] === false) {  //if it's odd (on the left)
+				console.log("testing");
+                panelsArray[num][5] += (bump * 2);
+                panelsArray[num][1].style.top = panelsArray[num][5] + "px";                                     //bump it down twice                 
+                panelsArray[num][3] = true;                                                                   //mark it as bumped down twice
+                console.log(panelsArray[num][5]);			
+            } else if(clickedOnThis !== num && panelsArray[num][3] === false && panelsArray[num][2] === false) {            //if it's on the right (and not the one we've clicked on)
 				console.log("theory");
-                panelsArray[j][5] += bump;
-                panelsArray[j][1].style.top = panelsArray[j][5] + "px";    //bump it down once
-				panelsArray[j][2] = true;                                                                   //mark it as bumped down once
+                panelsArray[num][5] += bump;
+                panelsArray[num][1].style.top = panelsArray[num][5] + "px";    //bump it down once
+				panelsArray[num][2] = true;                                                                   //mark it as bumped down once
             }
-            j++;
+            num++;
 		}
 	} else if (num < panelsArray.length) {																	//if the panel is on the left and not the last panel
-		while (j < panelsArray.length) {                                                        //for every panel after
-			if (panelsArray[j][0]%2 === 0) {                                                                //if it's even (on the right)
-				panelsArray[j][5] += (bump * 2);
-                panelsArray[j][1].style.top = panelsArray[j][5] + "px";//bump it down twice
-				panelsArray[j][3] = true;                                                                   //mark it as bumped down twice
-			} else {                                                                                        //if it's on the left
-				panelsArray[j][5] += bump;
-                panelsArray[j][1].style.top = panelsArray[j][5] + "px";    //bump it down once                     //null bug here
-				panelsArray[j][2] = true;                                                                   //mark it as bumped down once
+		while (num < panelsArray.length) {                                                                    //for every panel after
+			if (panelsArray[num][0]%2 === 0) {                                                                //if it's even (on the right)
+				panelsArray[num][5] += (bump * 2);
+                panelsArray[num][1].style.top = panelsArray[num][5] + "px";//bump it down twice
+				panelsArray[num][3] = true;                                                                   //mark it as bumped down twice
+			} else if(clickedOnThis !== num && panelsArray[num][3] === false && panelsArray[num][2] === false) {                                                                                        //if it's on the left
+				panelsArray[num][5] += bump;
+                panelsArray[num][1].style.top = panelsArray[num][5] + "px";    //bump it down once                     //null bug here
+				panelsArray[num][2] = true;                                                                   //mark it as bumped down once
 			}
-            j++;		
-    	
-		}
+            num++;
+        }
 	}
 }
