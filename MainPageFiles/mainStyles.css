@@ -32,7 +32,7 @@ body {
     width: 47%;
     padding-left: 20px;
     padding-right: 20px;
-    -webkit-transition: height 0.3s ease, width 0.3s ease;
+    -webkit-transition: height 0.3s ease, width 0.3s ease, top 5s ease;
 }
 
 .panelRight {
@@ -40,7 +40,7 @@ body {
     right: 0px;
     height: 260px;
     width: 47%;
-    -webkit-transition: height 0.3s ease, width 0.3s ease;
+    -webkit-transition: height 0.3s ease, width 0.3s ease, top 5s ease;
 }
 
 .panelContainer {
@@ -138,6 +138,6 @@ body {
     top: 790px;
 }
 
-#linksPanel {
+#panel7 {
     top: 1080px;
 }
