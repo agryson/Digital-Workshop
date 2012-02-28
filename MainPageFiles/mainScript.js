@@ -11,7 +11,7 @@ var panelsArray;
 
 /*The values to apply (can be easily edited, script wide, here)*/
 var bump = 290;
-var origWidth = 47;
+var origWidth = 49;
 var openWidth = 100;
 var origHeight = 260;
 var openHeight = 550;
@@ -41,7 +41,7 @@ function expand(panel) {                                                        
             console.log("expand() where i = " + i);
             closeAll();                                                                                     //closes all other open panels
             shiftOthers(i);                                                                                 //shifts others to make room
-			panelsArray[i][1].style.width = openWidth - 1 + "%";
+			panelsArray[i][1].style.width = openWidth + "%";
 			panelsArray[i][1].style.height = openHeight + "px";
             panelsArray[i][1].style.zIndex = 501;
             panelsArray[i][4] = true;

@@ -25,22 +25,18 @@ body {
     box-shadow: -1px -1px 0 rgba(255, 255, 255, 0.2);
 }
 
-.panelLeft{
+.panel {
     position: absolute;
-    left: 0px;
     height: 260px;
-    width: 47%;
-    padding-left: 20px;
-    padding-right: 20px;
+    width: 49%;
     -webkit-transition: height 0.3s ease, width 0.3s ease, top 0.3s ease;
+}
+.panelLeft{
+    left: 0px;
 }
 
 .panelRight {
-    position: absolute;
     right: 0px;
-    height: 260px;
-    width: 47%;
-    -webkit-transition: height 0.3s ease, width 0.3s ease, top 0.3s ease;
 }
 
 .panelContainer {
