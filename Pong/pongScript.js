@@ -273,5 +273,5 @@ function mainLoop() {
     ping();
     move();
     updateScore();
-    setTimeout("mainLoop();", 50); //changing the time will change the FPS
+    setTimeout(mainLoop, 50); //changing the time will change the FPS
 }
