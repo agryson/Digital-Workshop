@@ -11,7 +11,7 @@ var panelsArray;
 
 /*The values to apply (can be easily edited, script wide, here)*/
 var bump = 290;
-var origWidth = 48;
+var origWidth = 47;
 var openWidth = 100;
 var origHeight = 260;
 var openHeight = 550;
@@ -38,10 +38,12 @@ function init() {                                                               
 function expand(panel) {                                                                                    //expands clicked on panel, closing any other open ones and shifting other panels
     for(var i = 0; i < panelsArray.length; i++) {                                                           //loops through the array
         if(panel === panelsArray[i][1]){                                                                    //locks onto the panel we've been passed
+            console.log("expand() where i = " + i);
             closeAll();                                                                                     //closes all other open panels
             shiftOthers(i);                                                                                 //shifts others to make room
-			panelsArray[i][1].style.width = openWidth + "%";
+			panelsArray[i][1].style.width = openWidth - 1 + "%";
 			panelsArray[i][1].style.height = openHeight + "px";
+            panelsArray[i][1].style.zIndex = 501;
             panelsArray[i][4] = true;
         }
     }
@@ -51,6 +53,7 @@ function expand(panel) {                                                        
 function closeAll() {                                                                                       //loops through array and closes the open panel before returning all panels to starting positions
 	for(var j = 0; j < panelsArray.length; j++) {
 		if (panelsArray[j][4] === true) {
+            console.log("closeAll() where j = " + j);
             console.log(panelsArray[j][1].style.width);
 			panelsArray[j][1].style.width = origWidth + "%";
 			panelsArray[j][1].style.height = origHeight + "px";
@@ -61,9 +64,7 @@ function closeAll() {                                                           
 }
 
 function startingPositions() {																				//Returns all shifted panels to their original positions
-	var step = 0;
-    while ( step < panelsArray.length) {
-        console.log("startingPositions" + step);
+    for (var step = 0; step < panelsArray.length; step++) {
         if(panelsArray[step][2] === true){                                                                  //if shifted once, shift it back up one
             panelsArray[step][5] -= bump;
             panelsArray[step][1].style.top = panelsArray[step][5] + "px";
@@ -73,24 +74,25 @@ function startingPositions() {																				//Returns all shifted panels t
             panelsArray[step][1].style.top = panelsArray[step][5] + "px";
 			panelsArray[step][3] = false;                                                                   //then reset our marker
 		}
-        step++;	
-    
+
     }
 }
 
 function shiftOthers(num) {                                                                                 //Shifts all but the clicked upon panel to make room for expansion
     var clickedOnThis = num;
-    console.log(num);
+    var leftOne = clickedOnThis - 1;
+    if(leftOne%2 === 0){
+        panelsArray[leftOne][5] += (bump * 2);
+        panelsArray[leftOne][1].style.top = panelsArray[leftOne][5] + "px";                                     //bump it down twice                 
+        panelsArray[leftOne][3] = true;
+    }
 	if (panelsArray[num][0]%2 === 0 && num < panelsArray.length) {                                          //if the panel is on the right (but stop at the last one)
         while (num < panelsArray.length) {                                                                    //for every panel after and the one to the left of it
             if (panelsArray[num][0]%2 !== 0 && panelsArray[num][3] === false && panelsArray[num][2] === false) {  //if it's odd (on the left)
-				console.log("testing");
                 panelsArray[num][5] += (bump * 2);
                 panelsArray[num][1].style.top = panelsArray[num][5] + "px";                                     //bump it down twice                 
-                panelsArray[num][3] = true;                                                                   //mark it as bumped down twice
-                console.log(panelsArray[num][5]);			
+                panelsArray[num][3] = true;                                                                   //mark it as bumped down twice			
             } else if(clickedOnThis !== num && panelsArray[num][3] === false && panelsArray[num][2] === false) {            //if it's on the right (and not the one we've clicked on)
-				console.log("theory");
                 panelsArray[num][5] += bump;
                 panelsArray[num][1].style.top = panelsArray[num][5] + "px";    //bump it down once
 				panelsArray[num][2] = true;                                                                   //mark it as bumped down once
