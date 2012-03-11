@@ -22,6 +22,12 @@ body {
     background: rgba(0, 0, 0, 0.9);
     background:  /*http://lea.verou.me/2011/03/beveled-corners-negative-border-radius-with-css3-gradients/*/
         -webkit-linear-gradient(135deg, transparent 30px, rgba(0, 0, 0, 0.9) 30px);
+    background:  /*http://lea.verou.me/2011/03/beveled-corners-negative-border-radius-with-css3-gradients/*/
+        -moz-linear-gradient(135deg, transparent 30px, rgba(0, 0, 0, 0.9) 30px);
+    background:  /*http://lea.verou.me/2011/03/beveled-corners-negative-border-radius-with-css3-gradients/*/
+        -o-linear-gradient(135deg, transparent 30px, rgba(0, 0, 0, 0.9) 30px);
+    background:  /*http://lea.verou.me/2011/03/beveled-corners-negative-border-radius-with-css3-gradients/*/
+        -ms-linear-gradient(135deg, transparent 30px, rgba(0, 0, 0, 0.9) 30px);
     box-shadow: -1px -1px 0 rgba(255, 255, 255, 0.2);
 }
 
@@ -30,19 +36,20 @@ body {
     height: 260px;
     width: 49%;
     -webkit-transition: height 0.3s ease, width 0.3s ease, top 0.3s ease;
+    -moz-transition: height 0.3s ease, width 0.3s ease, top 0.3s ease;
+    -o-transition: height 0.3s ease, width 0.3s ease, top 0.3s ease;
     overflow-y: scroll;
 }
 .panelLeft{
-    left: 0px;
+    left: 0;
 }
 
 .panelRight {
-    right: 0px;
+    right: 0;
 }
 
 .panelContainer {
     margin: 15px;
-    padding: 5px;
     height: 85%;
     width: 95%;
     overflow-y: scroll;
@@ -55,10 +62,6 @@ is the only one that explained it in a sufficiently detailed manner*/
 
 .panelContainer::-webkit-scrollbar {
     width: 5px;
-}
-
-.panelContainer::-webkit-scrollbar-track {
-    
 }
 
 .panelContainer::-webkit-scrollbar-track-piece:vertical:start {
@@ -81,10 +84,11 @@ is the only one that explained it in a sufficiently detailed manner*/
 }
 
 .panel::-webkit-scrollbar {
-    width: 0px;
+    width: 0;
 }
+
 #container::-webkit-scrollbar {
-    width: 0px;
+    width: 0;
 }
 
 /*IDs*/
