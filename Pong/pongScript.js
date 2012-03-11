@@ -156,7 +156,7 @@ function hit1(serve){
             } else if (ballPosY <= paddle1Pos + 15 && ballPosY >= paddle1Pos - 10) {
                 //top part of racket
                 dx = 10;
-                dy = -5 - ace * -1;
+                dy = -5 - ace;
             } else if (ballPosY > paddle1Pos + 80 && ballPosY < paddle1Pos + 100) {
                 //bottom part of racket
                 dx = 10;
@@ -178,7 +178,7 @@ function hit2(serve){
             } else if (ballPosY <= paddle2Pos + 15 && ballPosY >= paddle2Pos - 10) {
                 //top part of racket
                 dx = -10;
-                dy = -5 - ace * -1;
+                dy = -5 - ace;
             } else if (ballPosY > paddle2Pos + 80 && ballPosY < paddle2Pos + 100) {
                 //bottom part of racket
                 dx = -10;
