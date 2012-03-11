@@ -64,6 +64,12 @@ a:link{
     overflow-y: scroll;
 }
 
+.illustration {
+    float: left;
+    margin: 0 5px 5px 0;
+    border: solid 2px #FFFFFF;
+}
+
 /*PSEUDOs*/
 /* I knew about the scrollbar before but this site: 
 http://almaer.com/blog/creating-custom-scrollbars-with-css-how-css-isnt-great-for-every-task 
@@ -96,6 +102,18 @@ is the only one that explained it in a sufficiently detailed manner*/
     width: 0;
 }
 
+.frames {
+    width: 800px;
+    height: 600px;
+}
+
+.launcher {
+    width: 20%;
+    height: 3em;
+    border-radius: 5px;
+    text-align: center;
+}
+
 #container::-webkit-scrollbar {
     width: 0;
 }
@@ -104,10 +122,10 @@ is the only one that explained it in a sufficiently detailed manner*/
 #topBar {
     position: fixed;
     top: 0;
-    left: 10%;
+    left: 7%;
     height: 180px;
     margin: auto;
-    width: 80%;
+    width: 85%;
     min-width: 600px;
     text-indent: 150px;
     z-index: 600;
@@ -147,6 +165,29 @@ is the only one that explained it in a sufficiently detailed manner*/
     padding-top: 200px;
     overflow-y: scroll;
     overflow-x: visible;
+}
+
+#curtain {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.8);
+    z-index: -2;
+    opacity: 0;
+    -webkit-transition: opacity 0.3s ease;
+}
+
+#frame {
+    position: relative;
+    z-index: -1;
+    margin: auto;
+    margin-top: 15%;
+    background-color: #000;
+    width: 800px;
+    opacity: 0;
+    -webkit-transition: opacity 0.3s 0.3s ease;
 }
 
 #panel1 {

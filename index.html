@@ -16,7 +16,7 @@
         <span>
             <img id="photo" src="images/profile.png"></img>
             <span id="photoFrame"></span>
-        <span>
+        </span>
         <h1>Alex's Digital Workshop</h1>
         <h2>Experiments in HTML5 as a hobbyist</h2>
         <span id="social">
@@ -50,17 +50,24 @@
             
             <div class="glassPanel panel panelRight" id="panel2" onClick="expand(panel2)">
                 <div class="panelContainer">
-                    <img src="Pong/PongScreenShot.png"></img>
+                    <img class="illustration" src="Pong/PongScreenShot.png" />
+                    <h2>Pong (CSS)</h2> 
+                    <p>My first foray into web based game design!</p>
+                    <p>This version of Pong is heavily based off of <a href="http://www.devx.com/webdev/10MinuteSolution/27134/0/page/1">this tutorial</a>. I simply adapted the code to allow for two players and played around with the ball reflections.</p>
+                    <p>Pong (CSS) uses styled divs for the game elements like paddles, balls etc. and uses JavaScript to change their positions in response to user input.</p>
+                    <p>The long-term goal with this particular project is to nail down the game logic so that the next project (Pong, but using the HTML5 canvas element) will be easier to implement. Namely, I'll be able to focus on the canvas instead of the game logic.</p>
+                    <button class="launcher" onclick="openProject(1);"><strong>Play Pong (CSS) Now!</strong></button>
                 </div>
             </div>
             
             
             <div class="glassPanel panel panelLeft" id="panel3" onClick="expand(panel3)">
                 <div class="panelContainer">
+                    <h2>Links</h2>
                 </div>
             </div>
             
-            
+            <!-- Below is a typical piece of panel code
             <div class="glassPanel panel panelRight" id="panel4" onClick="expand(panel4)">
                 <div class="panelContainer">
                 </div>
@@ -79,11 +86,21 @@
             </div>
             
             
+            
             <div class="glassPanel panel panelLeft" id="panel7" onClick="expand(panel7)">
                 <div class="panelContainer">
+                    ***INSERT CONTENT HERE***
                 </div>
             </div>
+            
+            -->
         </div>
+	
+     <div id="curtain" onclick="vanish();">
+        <div id="frame">
+        </div>
+    </div>
+     
 	</body>
-
+    
 </html>

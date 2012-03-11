@@ -2,10 +2,10 @@
 var panel1;
 var panel2;
 var panel3;
-var panel4;
-var panel5;
-var panel6;
-var panel7;
+//var panel4;
+//var panel5;
+//var panel6;
+//var panel7;
 /*And their array*/
 var panelsArray;
 
@@ -21,19 +21,19 @@ function init() {
     panel1 = document.getElementById("panel1");
     panel2 = document.getElementById("panel2");
     panel3 = document.getElementById("panel3");
-    panel4 = document.getElementById("panel4");
-    panel5 = document.getElementById("panel5");
-    panel6 = document.getElementById("panel6");
-    panel7 = document.getElementById("panel7");
+    //panel4 = document.getElementById("panel4");
+    //panel5 = document.getElementById("panel5");
+    //panel6 = document.getElementById("panel6");
+    //panel7 = document.getElementById("panel7");
     //a single panelArray = [sequence #, id, bumpedOnce?, bumpedTwice?, open?, top]
     panelsArray = [
         [1,panel1,false,false,false,210],
         [2,panel2,false,false,false,210],
-        [3,panel3,false,false,false,500],
-        [4,panel4,false,false,false,500],
-        [5,panel5,false,false,false,790],
-        [6,panel6,false,false,false,790],
-        [7,panel7,false,false,false,1080]
+        [3,panel3,false,false,false,500]
+        //[4,panel4,false,false,false,500],
+        //[5,panel5,false,false,false,790],
+        //[6,panel6,false,false,false,790],
+        //[7,panel7,false,false,false,1080]
     ];
 }
 
@@ -119,4 +119,31 @@ function shiftOthers(num) {
             num++;
         }
 	}
+}
+
+//OTHER FUNCTIONS:
+
+function openProject (project) {
+    switch(project) {
+        case 1:
+            document.getElementById("frame").innerHTML = "<iframe class='frames' src='Pong/pong.html' scrolling='no'></iframe>";
+            appear();
+        break;
+        default:
+    }
+    
+}
+
+function appear() {
+    document.getElementById("frame").style.opacity = "1";
+    document.getElementById("curtain").style.opacity = "1";
+    document.getElementById("frame").style.zIndex = "1000";
+    document.getElementById("curtain").style.zIndex = "1001";
+
+}
+function vanish() {
+    document.getElementById("frame").style.opacity = "0";
+    document.getElementById("curtain").style.opacity = "0";
+    document.getElementById("frame").style.zIndex = "-2";
+    document.getElementById("curtain").style.zIndex = "-1";
 }
