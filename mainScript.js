@@ -29,7 +29,7 @@ function init() {
     panelsArray = [
         [1,panel1,false,false,false,210],
         [2,panel2,false,false,false,210],
-        [3,panel3,false,false,false,500]
+        [3,panel3,false,false,false,500]//,
         //[4,panel4,false,false,false,500],
         //[5,panel5,false,false,false,790],
         //[6,panel6,false,false,false,790],

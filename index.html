@@ -20,8 +20,8 @@
         <h1>Alex's Digital Workshop</h1>
         <h2>Experiments in HTML5 as a hobbyist</h2>
         <span id="social">
-            <img src="images/gplus.png"></img>
-            <img src="images/li.gif"></img>
+            <a href="https://plus.google.com/111846395271727683726/about"><img src="images/gplus.png"></a>
+            <a href="http://fr.linkedin.com/in/agryson" id="Li"><img src="images/li.gif"></a>
         </span>
 	</header>
 	
@@ -53,9 +53,13 @@
                     <img class="illustration" src="Pong/PongScreenShot.png" />
                     <h2>Pong (CSS)</h2> 
                     <p>My first foray into web based game design!</p>
-                    <p>This version of Pong is heavily based off of <a href="http://www.devx.com/webdev/10MinuteSolution/27134/0/page/1">this tutorial</a>. I simply adapted the code to allow for two players and played around with the ball reflections.</p>
-                    <p>Pong (CSS) uses styled divs for the game elements like paddles, balls etc. and uses JavaScript to change their positions in response to user input.</p>
+                    <p>This version of Pong is heavily based on <a href="http://www.devx.com/webdev/10MinuteSolution/27134/0/page/1">this tutorial</a>. I simply adapted the code to allow for two players and played around with the ball reflections.</p>
+                    <p>Pong (CSS) uses styled divs for the game elements like paddles, balls etc. and uses JavaScript to change their positions in response to user input and to update the scores.</p>
+                    <p>The middle of each paddle reflects the ball normally, while the edges of each paddle reflect it with a greater angle. This adds a slight element of strategy while preventing any "certain wins", the oposing player always has a chance of getting to teh ball in time.</p>
                     <p>The long-term goal with this particular project is to nail down the game logic so that the next project (Pong, but using the HTML5 canvas element) will be easier to implement. Namely, I'll be able to focus on the canvas instead of the game logic.</p>
+                    <p>The button below will open up the game in a lightbox. Player 1's controls are "r" for up, "d" for down and Player 2's controls are simply the up and down arrow keys. Either player can serve the ball using the space bar. To exit, just click anywhere outside of the playable box.</p>
+                    <p>I've still got things to finish on this project, but they're mainly cosmetic - I'd like to clean up the start screen for example.</p>
+                    <br />
                     <button class="launcher" onclick="openProject(1);"><strong>Play Pong (CSS) Now!</strong></button>
                 </div>
             </div>
@@ -64,6 +68,9 @@
             <div class="glassPanel panel panelLeft" id="panel3" onClick="expand(panel3)">
                 <div class="panelContainer">
                     <h2>Links</h2>
+                    <h3>Pong (CSS)</h3>
+                    <p>Main tutorial for inspiration: <a href="http://www.devx.com/webdev/10MinuteSolution/27134/0/page/1">Dev<sup>x</sup></a></p>
+                    
                 </div>
             </div>
             
@@ -97,6 +104,7 @@
         </div>
 	
      <div id="curtain" onclick="vanish();">
+        <h3 id="exitMessage">Click anywhere outside of the playable frame to exit.</h3>
         <div id="frame">
         </div>
     </div>
