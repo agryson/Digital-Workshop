@@ -12,11 +12,11 @@
 		</script>		
 	</head>
 
-	<header class="glassPanel" id="topBar">
+	<header class="glassPanel" id="topBar" onclick="closeAll();">
         <span>
             <img id="photo" src="images/profile.png"></img>
             <span id="photoFrame"></span>
-        <span>
+        </span>
         <h1>Alex's Digital Workshop</h1>
         <h2>Experiments in HTML5 as a hobbyist</h2>
         <span id="social">
@@ -30,58 +30,77 @@
 	    <div id="container">
         
         
-            <div class="glassPanel panelLeft" id="panel1" onClick="expand(panel1)">
+            <div class="glassPanel panel panelLeft" id="panel1" onClick="expand(panel1)">
                 <div class="panelContainer">
                     <h2>About...</h2>
                     <h3>...this site</h3>
                     <p>This site is more or less a launchpad for my various flirtations with HTML5, which in the mid term will focus on web-based game development. Since it's hosted on Google's App Engine, there's a lot of room for some experimentation in server side stuff as well, since long term I'd  like to go further than just front end experiences and move towards full bottom-to-top apps.</p>
-                    <p>The projects tab shows you the projects which I qualify as a good beta or release level, while the plans tab gives you a sneak preview off what's in the pipeline, including buggier, alpha and early beta stuff.</p>
+                    <p>The project tiles on this page show the projects which I qualify as a good beta or release level but you can get everything at <a href="https://github.com/agryson/Digital-Workshop">GitHub</a> including buggier, alpha and early beta stuff.</p>
                     <h3>... the code</h3>
                     <p>As an early adopter of the 'nothing but the cloud' approach, this site and all the projects it hosts have been, as much as possible, developed using available online tools. Development has been in the Cloud9 IDE.</p>
-                    <p>Where I can, I make everything as well referenced, commented and available as possible. While inspired by lots of great code on the web (some choice spots are available in the links section), everything you see and touch was lovingly made by me - copy & paste is not conducive to learning! Everything is available as a downloadable zip via git and you're free to replicate or be inspired by anything you see, but give credit where it's due and linking back here would be greatly appreciated.</p>
+                    <p>Where I can, I make everything as well referenced, commented and available as possible. While inspired by lots of great code on the web (some choice spots are available in the links section), everything you see and touch was lovingly made by me - copy & paste is not conducive to learning! Everything is available as a downloadable zip via <a href="https://github.com/agryson/Digital-Workshop">GitHub</a> and you're free to replicate or be inspired by anything you see, but give credit where it's due and linking back here would be greatly appreciated.</p>
                     <h3>...me</h3>
                     <p>I've always been a tinkerer and maker, in no small way thanks to my upbringing. My dad once made me a periscope out of wood and some pocket mirrors when I was about 5 or 6  for example which is the kind of thing which set the ball rolling. </p>
                     <p>I first came across HTML in secondary school and loved it but didn't really go further than the most basic stuff. Later, studying physics in college we got to play with terminals and again touched on coding for the web but with so much else going on, it once more fell by the wayside. Then, back in 2008 around the end of my masters I finally got around to installing Linux (I started with Ubuntu, like many others) and computers suddenly weren't the fragile black boxes I had always perceived them as.</p>
                     <p>As an English teacher in Paris after my masters, I had the time and motivation to get my hands dirty, starting as many do by fixing computers for friends and colleagues, recovering data, letting people know that a clean Linux install will always be preferable to a pirated windows and not as difficult to use as they might think. All of this of course was great as a gateway drug to something a little bit more involved and in 2010 I got my first Android (the trustworthy Nexus One) and quickly set about learning the basics of Java and  Android programming. I released my first app in July of 2010, an interactive adventure book.</p>
-                    <p>Yet again, time became a precious resource when I changed jobs and my development returned to background noise levels - which was a pity because I work for a software company! Then at the beginning of 2012 I got to work on a project that had some web design work needed. I didn't do that work unfortunately but it gave me enough exposure to relapse and with the same energy that I applied to learning Android, I attacked HTML5. The result of that, you see before you.</p>
+                    <p>Yet again, time became a precious resource when I changed jobs and my development returned to background noise levels - which was a pity because I work for a software company! Then at the beginning of 2012 I got to work on a project that had some web design work needed. I didn't do the actual web-based work unfortunately but it gave me enough exposure to relapse and with the same energy that I applied to learning Android, I attacked HTML5. The result of that, you see before you.</p>
                 </div>     
             </div>
             
             
-            <div class="glassPanel panelRight" id="panel2" onClick="expand(panel2)">
+            <div class="glassPanel panel panelRight" id="panel2" onClick="expand(panel2)">
                 <div class="panelContainer">
-                    <img src="../Pong/PongScreenShot.png"></img>
+                    <img class="illustration" src="Pong/PongScreenShot.png" />
+                    <h2>Pong (CSS)</h2> 
+                    <p>My first foray into web based game design!</p>
+                    <p>This version of Pong is heavily based off of <a href="http://www.devx.com/webdev/10MinuteSolution/27134/0/page/1">this tutorial</a>. I simply adapted the code to allow for two players and played around with the ball reflections.</p>
+                    <p>Pong (CSS) uses styled divs for the game elements like paddles, balls etc. and uses JavaScript to change their positions in response to user input.</p>
+                    <p>The long-term goal with this particular project is to nail down the game logic so that the next project (Pong, but using the HTML5 canvas element) will be easier to implement. Namely, I'll be able to focus on the canvas instead of the game logic.</p>
+                    <button class="launcher" onclick="openProject(1);"><strong>Play Pong (CSS) Now!</strong></button>
                 </div>
             </div>
             
             
-            <div class="glassPanel panelLeft" id="panel3" onClick="expand(panel3)">
+            <div class="glassPanel panel panelLeft" id="panel3" onClick="expand(panel3)">
                 <div class="panelContainer">
+                    <h2>Links</h2>
                 </div>
             </div>
             
-            
-            <div class="glassPanel panelRight" id="panel4" onClick="expand(panel4)">
-                <div class="panelContainer">
-                </div>
-            </div>
-            
-            
-            <div class="glassPanel panelLeft" id="panel5" onClick="expand(panel5)">
-                <div class="panelContainer">
-                </div>
-            </div>
-            
-            
-            <div class="glassPanel panelRight" id="panel6" onClick="expand(panel6)">
+            <!-- Below is a typical piece of panel code
+            <div class="glassPanel panel panelRight" id="panel4" onClick="expand(panel4)">
                 <div class="panelContainer">
                 </div>
             </div>
             
             
-            <div class="glassPanel panelLeft" id="panel7" onClick="expand(panel7)">
+            <div class="glassPanel panel panelLeft" id="panel5" onClick="expand(panel5)">
+                <div class="panelContainer">
+                </div>
             </div>
+            
+            
+            <div class="glassPanel panel panelRight" id="panel6" onClick="expand(panel6)">
+                <div class="panelContainer">
+                </div>
+            </div>
+            
+            
+            
+            <div class="glassPanel panel panelLeft" id="panel7" onClick="expand(panel7)">
+                <div class="panelContainer">
+                    ***INSERT CONTENT HERE***
+                </div>
+            </div>
+            
+            -->
         </div>
+	
+     <div id="curtain" onclick="vanish();">
+        <div id="frame">
+        </div>
+    </div>
+     
 	</body>
-
+    
 </html>

@@ -1,0 +1,219 @@
+/*CUSTOMIZED HTML TAGS*/
+html {
+    font-family: Ubuntu, Arial, sans-serif;
+    color: #d2d2d2;
+    background-image: url("images/texture.png");
+    background-repeat: repeat;
+    background-color: #1d5135;
+    background-attachment: fixed;
+    height: 100%;
+    box-shadow: 0 0 350px -20px #000000 inset;
+    overflow: hidden;
+}
+
+body {
+    margin: 0;   
+    height: 100%;
+    overflow-y: scroll;
+}
+
+a:visited  {
+    color: #d2d2d2;
+    font-style: italic;
+}
+a:link{
+    color: #d2d2d2;
+    font-style: italic;
+}
+
+/*CLASSES*/
+.glassPanel { 
+    background: rgba(0, 0, 0, 0.9);
+    background:  /*http://lea.verou.me/2011/03/beveled-corners-negative-border-radius-with-css3-gradients/*/
+        -webkit-linear-gradient(135deg, transparent 30px, rgba(0, 0, 0, 0.9) 30px);
+    background:  /*http://lea.verou.me/2011/03/beveled-corners-negative-border-radius-with-css3-gradients/*/
+        -moz-linear-gradient(135deg, transparent 30px, rgba(0, 0, 0, 0.9) 30px);
+    background:  /*http://lea.verou.me/2011/03/beveled-corners-negative-border-radius-with-css3-gradients/*/
+        -o-linear-gradient(135deg, transparent 30px, rgba(0, 0, 0, 0.9) 30px);
+    background:  /*http://lea.verou.me/2011/03/beveled-corners-negative-border-radius-with-css3-gradients/*/
+        -ms-linear-gradient(135deg, transparent 30px, rgba(0, 0, 0, 0.9) 30px);
+    box-shadow: -1px -1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.panel {
+    position: absolute;
+    height: 260px;
+    width: 49%;
+    -webkit-transition: height 0.3s ease, width 0.3s ease, top 0.3s ease;
+    -moz-transition: height 0.3s ease, width 0.3s ease, top 0.3s ease;
+    -o-transition: height 0.3s ease, width 0.3s ease, top 0.3s ease;
+    overflow-y: scroll;
+}
+.panelLeft{
+    left: 0;
+}
+
+.panelRight {
+    right: 0;
+}
+
+.panelContainer {
+    margin: 15px;
+    height: 90%;
+    width: 95%;
+    overflow-y: scroll;
+}
+
+.illustration {
+    float: left;
+    margin: 0 5px 5px 0;
+    border: solid 2px #FFFFFF;
+}
+
+/*PSEUDOs*/
+/* I knew about the scrollbar before but this site: 
+http://almaer.com/blog/creating-custom-scrollbars-with-css-how-css-isnt-great-for-every-task 
+is the only one that explained it in a sufficiently detailed manner*/
+
+.panelContainer::-webkit-scrollbar {
+    width: 5px;
+}
+
+.panelContainer::-webkit-scrollbar-track-piece:vertical:start {
+    box-shadow: 0 0 3px #d2d2d2 inset;
+    border-radius: 2px;
+}
+
+.panelContainer::-webkit-scrollbar-button:vertical:end {
+    height: 23px;
+}
+
+.panelContainer::-webkit-scrollbar-button:vertical:start {
+    display: none;
+}
+
+.panelContainer::-webkit-scrollbar-thumb {
+    width: 5px;
+    border-radius: 2px;
+    box-shadow: 0 0 0 3px #363636 inset;
+}
+
+.panel::-webkit-scrollbar {
+    width: 0;
+}
+
+.frames {
+    width: 800px;
+    height: 600px;
+}
+
+.launcher {
+    width: 20%;
+    height: 3em;
+    border-radius: 5px;
+    text-align: center;
+}
+
+#container::-webkit-scrollbar {
+    width: 0;
+}
+
+/*IDs*/
+#topBar {
+    position: fixed;
+    top: 0;
+    left: 7%;
+    height: 180px;
+    margin: auto;
+    width: 85%;
+    min-width: 600px;
+    text-indent: 150px;
+    z-index: 600;
+}
+
+#photo {
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+    z-index: 594;
+    border-radius: 6px;
+}
+
+#photoFrame {
+    width: 120px;
+	height: 160px;
+	position: absolute;
+	left: 10px;
+    bottom: 10px;
+    z-index: 595;
+    border-radius: 5px;
+    border: 1px #000;
+	box-shadow: 0 0 20px 5px #000 inset, 1px 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+#social {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+#container {
+    position: relative;
+    margin: auto;
+    width: 80%;
+    height: 100%;
+    padding-top: 200px;
+    overflow-y: scroll;
+    overflow-x: visible;
+}
+
+#curtain {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.8);
+    z-index: -2;
+    opacity: 0;
+    -webkit-transition: opacity 0.3s ease;
+}
+
+#frame {
+    position: relative;
+    z-index: -1;
+    margin: auto;
+    margin-top: 15%;
+    background-color: #000;
+    width: 800px;
+    opacity: 0;
+    -webkit-transition: opacity 0.3s 0.3s ease;
+}
+
+#panel1 {
+    top: 210px;
+}
+
+#panel2 {
+    top: 210px;
+}
+
+#panel3 {
+    top: 500px;
+}
+
+#panel4 {
+    top: 500px;
+}
+
+#panel5 {
+    top: 790px;
+}
+
+#panel6 {
+    top: 790px;
+}
+
+#panel7 {
+    top: 1080px;
+}
