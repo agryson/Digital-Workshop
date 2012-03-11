@@ -62,12 +62,30 @@ a:link{
     height: 90%;
     width: 95%;
     overflow-y: scroll;
+    cursor: default;
 }
 
 .illustration {
     float: left;
     margin: 0 5px 5px 0;
     border: solid 2px #FFFFFF;
+}
+
+.frames {
+    width: 800px;
+    height: 600px;
+    border-radius: 10px;
+    -webkit-transition: opacity 0.3s 0.3s ease;
+    -moz-transition: opacity 0.3s 0.3s ease;
+    -o-transition: opacity 0.3s 0.3s ease;
+}
+
+.launcher {
+    width: 20%;
+    height: 3em;
+    border-radius: 5px;
+    margin-left: 40%;
+    margin-right: 40%;
 }
 
 /*PSEUDOs*/
@@ -100,18 +118,6 @@ is the only one that explained it in a sufficiently detailed manner*/
 
 .panel::-webkit-scrollbar {
     width: 0;
-}
-
-.frames {
-    width: 800px;
-    height: 600px;
-}
-
-.launcher {
-    width: 20%;
-    height: 3em;
-    border-radius: 5px;
-    text-align: center;
 }
 
 #container::-webkit-scrollbar {
@@ -185,9 +191,14 @@ is the only one that explained it in a sufficiently detailed manner*/
     margin: auto;
     margin-top: 15%;
     background-color: #000;
+    border-radius: 10px;
     width: 800px;
     opacity: 0;
-    -webkit-transition: opacity 0.3s 0.3s ease;
+}
+
+#exitMessage {
+    text-align: center;
+    margin: 1em;
 }
 
 #panel1 {
