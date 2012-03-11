@@ -17,6 +17,15 @@ body {
     overflow-y: scroll;
 }
 
+a:visited  {
+    color: #d2d2d2;
+    font-style: italic;
+}
+a:link{
+    color: #d2d2d2;
+    font-style: italic;
+}
+
 /*CLASSES*/
 .glassPanel { 
     background: rgba(0, 0, 0, 0.9);
@@ -50,7 +59,7 @@ body {
 
 .panelContainer {
     margin: 15px;
-    height: 85%;
+    height: 90%;
     width: 95%;
     overflow-y: scroll;
 }
