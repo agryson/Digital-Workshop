@@ -3,10 +3,7 @@
 I simply edited it to work with two paddles*/
 
 //Add the various ids and vars necessary
-var ball;
-var paddle1;
-var paddle2;
-var scoreBoard;
+var ball, paddle1, paddle2, scoreBoard, ace;
 
 /*set the speed vars (unlike in the tutorial, these will initially be 0 so that the
 player can "serve" the ball with the spacebar)*/
@@ -21,6 +18,7 @@ var paddle1Pos = 250;
 var paddle2Pos = 250;
 var ballPosX = 20;
 var ballPosY = 295;
+var padSpeed = 5;   //changint his value will change the speed with which the paddles move
 
 /*Set vars to know if a key is down or not*/
 var player1down = false;
@@ -32,7 +30,6 @@ var serveBar = false;
 /*a var to know who the current player is and ace is for clean ball bounces in the 
 hit() functions*/
 var currentPlayer = 1;
-var ace;
 
 /*When I click to start, I initialize everything and fade nicely from the start 
 screen to the game*/
@@ -113,17 +110,21 @@ function move(){
     if (serveBar === true) {
         serve();
     }
+    
     if (player1up === true) {
-        p1up();
+        shift(1, 'up');
     }
+    
     if (player1down === true) {
-        p1down();
+        shift(1, 'down');
     }
+    
     if (player2up === true) {
-        p2up();
+        shift(2, 'up');
     }
+    
     if (player2down === true) {
-        p2down();
+        shift(2, 'down');
     }
 }
 
@@ -134,120 +135,115 @@ function serve() {
     if (dx === 0 && dy === 0 && ballPosX > 10 && ballPosX < 790) { 
         
         if (currentPlayer === 1) {
-            hit1(true);
+            hit(true, 1);
             
         } else {
-            hit2(true);
+            hit(true, 2);
         }
     }
 }
 
 /*Control the ball direction when it bounces on a paddle*/
-function hit1(serve){
+function hit(serve, player){
+    var pad, invert;
+    
+    if (player == 1) {
+        pad = paddle1Pos;
+        invert = 1;
+    } else {
+        pad = paddle2Pos;
+        invert = -1;
+    }
+    
     if (serve === true) { //check to see if we're serving
         ace = Math.floor(Math.random() * 2 + 1); //and add some randomness
     } else {
         ace = dy; //or reflect normally
     }
-    if (ballPosY > paddle1Pos + 15 && ballPosY < paddle1Pos +80) { 
-                //middle of the racket
-                dx = 10;
-                dy = 0 + ace;
-            } else if (ballPosY <= paddle1Pos + 15 && ballPosY >= paddle1Pos - 10) {
-                //top part of racket
-                dx = 10;
-                dy = -5 - ace;
-            } else if (ballPosY > paddle1Pos + 80 && ballPosY < paddle1Pos + 100) {
-                //bottom part of racket
-                dx = 10;
-                dy = 5 + ace;
+    
+    if (ballPosY > pad + 15 && ballPosY < pad +80) { 
+            //middle of the racket
+            dx = 10 * invert;
+            dy = 0 + ace;
+        } else if (ballPosY <= pad + 15 && ballPosY >= pad - 10) {
+            //top part of racket
+            dx = 10 * invert;
+            dy = -5 - ace;
+        } else if (ballPosY > pad + 80 && ballPosY < pad + 100) {
+            //bottom part of racket
+            dx = 10 * invert;
+            dy = 5 + ace;
+        }
+}
+
+//shift() takes the player and direction and then moves the appropriate player's paddle in the appropriate direction
+function shift(player, direction) {
+    
+    switch (player) {
+        
+        case 1:
+            if (direction == 'up' && paddle1Pos > 0) {
+                paddle1Pos -= padSpeed;
+                paddle1.style.top = paddle1Pos + "px";
+            } else if (direction == 'down' && paddle1Pos < 500) {
+                paddle1Pos += padSpeed;
+                paddle1.style.top = paddle1Pos + "px";
             }
-}
-
-/*Control the ball direction when it bounces on a paddle*/
-function hit2(serve){
-    if (serve === true) { //check to see if we're serving
-        ace = Math.floor(Math.random() * 2 + 1); //and add some randomness
-    } else {
-        ace = dy; //or reflect normally
-    }
-    if (ballPosY > paddle2Pos + 15 && ballPosY < paddle2Pos +80) {
-                //middle of the racket
-                dx = -10;
-                dy = 0 + ace;
-            } else if (ballPosY <= paddle2Pos + 15 && ballPosY >= paddle2Pos - 10) {
-                //top part of racket
-                dx = -10;
-                dy = -5 - ace;
-            } else if (ballPosY > paddle2Pos + 80 && ballPosY < paddle2Pos + 100) {
-                //bottom part of racket
-                dx = -10;
-                dy = 5 + ace;
+            break;
+            
+        case 2:
+            if (direction == 'up' && paddle2Pos > 0) {
+                paddle2Pos -= padSpeed;
+                paddle2.style.top = paddle2Pos + "px";
+            } else if (direction == 'down' && paddle2Pos < 500) {
+                paddle2Pos += padSpeed;
+                paddle2.style.top = paddle2Pos + "px";
             }
-}
-
-//code to move player 1 up
-function p1up(){
-    if (paddle1Pos > 0) {
-        paddle1Pos -= 5;
-        paddle1.style.top = paddle1Pos + "px";
+            break;
+            
+        default:
+            break;
     }
 }
 
-//code to move player 1 down
-function p1down() {
-    if (paddle1Pos < 500) {
-        paddle1Pos += 5;
-        paddle1.style.top = paddle1Pos + "px";
-    }
-}
-
-//code to move player 2 up
-function p2up(){
-    if (paddle2Pos > 0) {
-        paddle2Pos -= 5;
-        paddle2.style.top = paddle2Pos + "px";
-    }
-}
-
-//code to move player 2 down
-function p2down() {
-    if (paddle2Pos < 500) {
-        paddle2Pos += 5;
-        paddle2.style.top = paddle2Pos + "px";
-    }
-}
-
-/*Check for collisions*/
 function ping() {
-    if (ballPosX < 20 - dx && dx !== 0) {
-            hit1();
+    
+    if (dx !== 0) { //Ensure the ball is not stationary
+        if (ballPosX < 20 - dx) {
+                hit(false, 1);
+        }
+        
+        if (ballPosX > 770 - dx) {
+                hit(false, 2);
+        }
+        
+        if (ballPosX <= 0) { 
+            //If I don't check the ball speed (dx), the score will increment forever
+            dx = 0; //should stop game here because we've moved beyond the back line
+            dy = 0;
+            scorePlayer2 += 1;
+            reset(1);
+        }
+        
+        if (ballPosX >= 790) {
+            //If I don't check the ball speed, the score will increment forever
+            dx = 0; //should stop game here because we've moved beyond the back line
+            dy = 0;
+            scorePlayer1 += 1;
+            reset(2);
+        }
+        
+        //reflect off of the bottom or top edges
+        if (ballPosY <= 1 || ballPosY >= 589) {
+            dy = dy * -1;
+        }
     }
-    if (ballPosX > 770 - dx && dx !== 0) {
-            hit2();
-    }
-    if (ballPosX <= 0 && dx !== 0) { 
-        //If I don't check the ball speed (dx), the score will increment forever
-        dx = 0; //should stop game here because we've moved beyond the back line
-        dy = 0;
-        scorePlayer2 += 1;
-        reset(1);
-    }
-    if (ballPosX >= 790 && dx !== 0) {
-        //If I don't check the ball speed, the score will increment forever
-        dx = 0; //should stop game here because we've moved beyond the back line
-        dy = 0;
-        scorePlayer1 += 1;
-        reset(2);
-    }
-    if (ballPosY <= 1 || ballPosY >= 589) {
-        dy = dy * -1;
-    }
+    
 }
 
 /*reset the positions depending on which player's turn it is*/
 function reset(player) {
-    if (player === 1) {
+    if (player == 1) {
         ballPosX = 20;
         ballPosY = 295;
         ball.style.left = ballPosX + "px";
