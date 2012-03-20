@@ -1,0 +1,12 @@
+#frame {
+    position: relative;
+    left: 0;
+    z-index: 1;   
+}
+
+#cache {
+    position: relative;
+    left: 0;
+    z-index: 0;
+    opacity: 0;    
+}
