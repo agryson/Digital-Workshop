@@ -2,9 +2,9 @@
 <html dir="ltr" lang="en">
     <head>
         <!--Import font and stylesheet, set characterset and title.-->
+        <link href="deltaStyle.css" rel="stylesheet" type="text/css" media="all">
         <link href='http://fonts.googleapis.com/css?family=Droid+Sans+Mono' rel='stylesheet' type='text/css'>
-		<link href="deltaStyle.css" rel="stylesheet" type="text/css" media="all">
-		<meta charset="UTF-8">
+    	<meta charset="UTF-8">
 		<title>Delta'</title>
 		
 		<script language="JavaScript" src="deltaScript.js">			
@@ -14,7 +14,12 @@
 	<body onload="init()">
         <header>Delta'</header>
         
-        <div id="mainContainer"> 
+        <div id="mainContainer">
+            <div id="boardContainer">
+                <table id="mainBoard" onclick="clickCell(event)"></table>
+            </div>
+            <button onclick="testBoard()">Change</button>
+            
             <div id="scoreContainer">
             </div>          
         </div>
