@@ -1,10 +1,27 @@
+/*main styles*/
 header {
     font-family: 'Droid Sans', monospace;
-    width: 100%;
+    wkdth: 100%;
 }
 
+table {
+}
+
+tr {
+    height:40px;
+}
+
+td {
+    width:40px;   
+}
+
+/*Div styles*/
 #mainContainer {
 
+}
+
+#boardContainer {
+    
 }
 
 #scoreContainer {
@@ -14,3 +31,4 @@ header {
 #playerContainer {
 
 }
+
