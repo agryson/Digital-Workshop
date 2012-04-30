@@ -16,9 +16,9 @@ function boardGen() {
 
             for (var i = 0; i < 21; i++) {
                 // Create a <td> element and a text node, make the text
-                // node the contents of the <td>, and put the <td> at
+                // node the contents of the <th>, and put the <th> at
                 // the end of the table row
-                var cell = document.createElement("td");
+                var cell = document.createElement("th");
                 var cellText = document.createTextNode("");
                 cell.appendChild(cellText);
                 row.appendChild(cell);

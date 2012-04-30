@@ -5,14 +5,18 @@ header {
 }
 
 table {
+    border-spacing: 0;
+    border: 1px solid black;
 }
 
 tr {
     height:40px;
 }
 
-td {
-    width:40px;   
+th {
+    width:40px;
+    background-color: #fffcdb;
+    border: 1px solid black;
 }
 
 /*Div styles*/
